@@ -10,7 +10,15 @@ A **memristor** (memory resistor) is a two-terminal circuit element whose resist
 
 The defining characteristic of a memristor is its **hysteresis loop** — a pinched figure-eight in the current-voltage plane. When no current flows, the device sits at the crossing point of the loop: zero voltage, zero current, but with a stored internal state (the memristance) that encodes everything that happened before.
 
-This crossing point is the key. At $V = 0$, $I = 0$, the memristor appears identical to an open circuit — but it is not. It carries hidden information in its resistance state. **Zero current does not mean zero information.**
+The loop is bounded by two extreme conditions that define its edges:
+
+**Open circuit** — infinite resistance, zero current. The device blocks all flow; $I = 0$ regardless of $V$. This is the upper boundary of the resistance axis: $R \to \infty$, $I \to 0$.
+
+**Short circuit** — zero resistance, infinite current. The device offers no opposition; $I \to \infty$ for any nonzero $V$. This is the lower boundary: $R \to 0$, $I \to \infty$.
+
+These two conditions are the memristor's mystical numbers. Open circuit is zero current with infinite resistance — length zero, precision infinite. Short circuit is infinite current with zero resistance — infinite length, zero precision. They are the poles of the device, and the hysteresis loop is the path the memristor traces between them.
+
+The crossing point sits exactly between these poles. At $V = 0$, $I = 0$, the memristor appears identical to an open circuit — but it is not. It carries hidden information in its resistance state. **Zero current does not mean zero information.**
 
 ## MMP's Reading
 
@@ -22,10 +30,31 @@ $$
 
 The memristance at the zero-crossing is the "orientation information" that survives cancellation. The device is at null, but it knows which direction it came from.
 
+## The V-I Diagram as MMP Continuum
+
+The V-I diagram of the memristor is not just a device characteristic — in MMP language it is the full continuum of box arithmetic laid out physically.
+
+The two boundary conditions are both $\{\}$, arrived at from opposite directions:
+
+$$
+0 \odot \infty = \{\}_+ \quad \text{(short circuit — } R=0, I=\infty \text{)}
+$$
+$$
+\infty \odot 0 = \{\}_- \quad \text{(open circuit — } R=\infty, I=0 \text{)}
+$$
+
+Every point on the hysteresis curve is a ratio of these two voids held in tension. The device's operating range is literally the interior of that dialectic. The **hysteresis loop is the device remembering which direction it traversed the continuum** — the memristor is a physical MMP accumulator.
+
 ## The Quaternary Unit Cell
 
-A memristor with two stable resistance states (high and low) is a binary device. But the hysteresis loop suggests a richer structure: there are four quadrants, two crossings, and the device behaves differently depending on whether it is approaching zero from positive or negative current. This is the MMP trinary of the void — $\{\}_+$, $\{\}_-$, and null at the crossing — plus the direction of approach.
+Unity is recovered when the void is nested inside itself — $\{\{\}\} = 1$. In circuit terms, two memristors in series piping one pole into the other instantiate this exactly:
 
-The proposed **quaternary unit cell** treats each memristor not as a bit (two states) but as an oriented void (three states with directional memory). This maps directly onto the MMP trinary structure and suggests an analog computing architecture in which the unit of information is an oriented zero rather than a binary digit.
+$$
+\text{short} \xrightarrow{\{\}_+} \text{[device]} \xrightarrow{\{\}_-} \text{open} \xrightarrow{\odot} \{\{\}\} = 1
+$$
+
+The output terminus where the two poles meet is where unity is recovered — the fixed point, the thing that stays the same as everything changes. The two crossbars $G$ and $G^T$ with short piped into one end and open into the other are physically instantiating the cross-composition of the oriented voids.
+
+A binary memristor reads two states (high resistance / low resistance) and discards the directional information. The **quaternary unit cell** preserves it — treating each memristor as an oriented void (three states: $\{\}_+$, $\{\}_-$, null) with directional memory. The information hidden behind zero is not lost; it is encoded in the memristance at the crossing point. The device knows which direction it came from, and that history *is* the computation.
 
 _TODO: formalize the mapping between memristor state transitions and ouroboros operator compositions_
