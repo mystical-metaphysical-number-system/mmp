@@ -33,7 +33,7 @@ Standard mathematics hedges on $0^0$ because it collapses both zeros into the sa
 
 ## Category error in ordinary notation
 
-When we write $0^0$ in the finite symbol system, MMP reads a **mystical expression**: the $0$s and $\infty$s in play belong to the **ouroboros operators**, not to the ordinary arithmetic operator set. We are still satisfied with the algebraic relation $0^0 = 1$, but we derive it as
+When we write $0^0$ in the finite symbol system, MMP reads a **mystical expression**: the $0$s and $\infty$s in play belong to the **ouroboros operator**, not to the ordinary arithmetic operator set. We are still satisfied with the algebraic relation $0^0 = 1$, but we derive it as
 
 $$
 \{\}_- \odot \{\}_+ = \{\{\}\} = 1 = 0^0 .

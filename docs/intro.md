@@ -19,7 +19,7 @@ Whether this recovers something the Egyptian priests understood and the Greeks o
 
 ## Number
 
-Length & precision, physical & metaphysical, mystical numbers, the resolution (oriented voids and ouroboros operators), the smoking gun ($0^0$), holographic unity, box math.
+Length & precision, physical & metaphysical, mystical numbers, the resolution (oriented voids and the ouroboros operator), the smoking gun ($0^0$), holographic unity, box math.
 
 - [Length & Precision](./Number/LengthAndPrecision.md) · [Physical](./Number/Physical.md) · [Metaphysical](./Number/Metaphysical.md) · [Physicalization](./Number/Physicalization.md)
 - [Mystical Numbers](./Number/Mystical.md) · [The Resolution](./Number/Resolution/Resolution.md) · [Zero Powers of Zero](./Number/SmokingGunZeroPowersOfZero.md)

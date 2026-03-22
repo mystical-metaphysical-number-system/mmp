@@ -37,25 +37,19 @@ $$
 \varphi = 1.6180339987\ldots
 $$
 
-Each successive ratio of consecutive Fibonacci terms is a better approximation:
-
-| Division | Value |
-|----------|-------|
-| $2 \div 1$ | 2.0000 |
-| $3 \div 2$ | 1.5000 |
-| $5 \div 3$ | 1.6666 |
-| $8 \div 5$ | 1.6000 |
-| $13 \div 8$ | 1.6250 |
-| $21 \div 13$ | 1.6154 |
-| $34 \div 21$ | 1.6190 |
-| $55 \div 34$ | 1.6176 |
-| $89 \div 55$ | 1.6182 |
-
-The displacement from $\varphi$ decreases with each step — length increases, precision tightens. The golden ratio is the **slowest** converging continued fraction precisely because it is maximally irrational: it demands the most length for the least precision gain per step.
+Each successive ratio of consecutive Fibonacci terms is a better approximation — the displacement from $\varphi$ decreases with each step, length increases, precision tightens. The golden ratio is the **slowest** converging continued fraction precisely because it is maximally irrational: it demands the most length for the least precision gain per step.
 
 <img src="/img/1_keS1Io-VsoLjotdcOS34iA.gif" style={{maxWidth: '100%'}} />
 
 In MMP terms, $\varphi$ is a number with infinite length and perpetually nonzero precision — yet the Fibonacci sequence demonstrates nature resolving it iteratively, digit by digit, ratio by ratio.
+
+## The Circle Paradox
+
+<video src="/img/circle-apex.webm" controls muted loop playsinline style={{maxWidth: '100%', width: '100%'}} />
+
+Here is a motivating hint at the deeper problem. We approximate a circle by increasing the number of vertices of a polygon — more sides, closer to the curve, precision tightens with each step. By MMP's framing this is a metaphysical number in progress: $\pi$ is being approached iteratively, length growing, displacement shrinking.
+
+But consider the limit. A circle has no sides. The polygon with infinite vertices is not a circle — it is a metaphysical thing pretending to be one. The circle itself sits outside the iterative process entirely, belonging to a class of object the process can approach but never become. The question of whether a smooth curve is the limit of a jagged one, or something categorically different, is precisely the question MMP asks of all transcendental quantities.
 
 ## Three Classes of Number
 
