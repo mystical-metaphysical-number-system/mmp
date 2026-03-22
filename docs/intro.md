@@ -23,7 +23,7 @@ Length & precision, physical & metaphysical, mystical numbers, the resolution (o
 
 - [Length & Precision](./Number/LengthAndPrecision.md) · [Physical](./Number/Physical.md) · [Metaphysical](./Number/Metaphysical.md) · [Physicalization](./Number/Physicalization.md)
 - [Mystical Numbers](./Number/Mystical.md) · [The Resolution](./Number/Resolution/Resolution.md) · [Zero Powers of Zero](./Number/SmokingGunZeroPowersOfZero.md)
-- [Holographic Unity](./Number/HolographicUnity.md) · [Box Math](./Number/BoxMath.md)
+- [Holographic Unity](./Number/Resolution/HolographicUnity.md) · [Box Math](./Number/BoxMath.md)
 
 ## ArchaeoArithmetic
 

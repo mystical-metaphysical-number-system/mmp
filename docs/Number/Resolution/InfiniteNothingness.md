@@ -15,7 +15,7 @@ $$
 \infty \odot 0 = \{\}_- \quad \text{(frame down — orientating down a dimension)}
 $$
 
-The null $\{\}$ is the unresolved pole — level 0, prior to any orientation. The two oriented voids $\{\}_+$ and $\{\}_-$ are level 1. Cross-composition of the oriented voids promotes to level 2 (see [The Ouroboros Operator](./OuroborosOperator.md)).
+The null $\{\}$ is the unresolved pole — level 0, prior to any orientation. The two oriented voids $\{\}_+$ and $\{\}_-$ are level 1. Cross-composition of the oriented voids promotes to level 2 (see [Holographic Unity](./HolographicUnity.md)).
 
 ## Why This Is Not the Empty Set
 

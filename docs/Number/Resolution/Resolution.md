@@ -9,4 +9,4 @@ The paradox at zero and infinity resolves into oriented voids, the ouroboros ope
 ## Sections
 
 - **[The Infinite Nothingness](./InfiniteNothingness.md)** — frame up, frame down, the null pole
-- **[The Ouroboros Operator](./OuroborosOperator.md)** — cross-composition, superposition, and the trinary structure
+- **[Holographic Unity](./HolographicUnity.md)** — the ouroboros operator, cross-composition, superposition, and the trinary structure
