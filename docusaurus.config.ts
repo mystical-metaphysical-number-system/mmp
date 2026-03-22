@@ -8,7 +8,7 @@ import rehypeKatex from 'rehype-katex';
 
 const config: Config = {
   title: 'Mystical Metaphysical Number System',
-  tagline: 'Box arithmetic encodes directly to a computer; polynomials do not. By replacing the empty set with the infinite nothingness, we synthesize pure and applied mathematics for an eclectic collection of treasures',
+  tagline: 'Box arithmetic encodes directly to a computer; polynomials do not. By rerooting the box math from the empty set to the infinite nothingness, we resolve its core logical contradiction and open up a chest of eclectic treasures',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -85,6 +85,7 @@ const config: Config = {
           items: [
             {label: 'Introduction', to: '/docs/intro'},
             {label: 'Number', to: '/docs/Number/Number'},
+            {label: 'ArchaeoArithmetic', to: '/docs/ArchaeoArithmetic/ArchaeoArithmetic'},
             {label: 'Applications', to: '/docs/Applications/Applications'},
           ],
         },
