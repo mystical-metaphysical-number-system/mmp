@@ -17,3 +17,5 @@ The framework bridges the realm of ZFC real-number pureism and the realm of fini
 - **[Smart Contracts](./SmartContracts.md)** — preventing accounting errors
 - **[Ontological Completeness](./OntologicalCompleteness.md)** — empty as infinite potential
 - **[Memristors](./Memristors.md)** — hysteresis loops and hiding information behind zero
+- **[Balanced Ternary](./BalancedTernary.md)** — Setun, efficiency, MMP as foundation
+- **[Bell's Inequality](./BellsInequality.md)** — noncommutativity of $\odot$ and hidden variables

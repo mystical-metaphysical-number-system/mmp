@@ -19,6 +19,7 @@ The correct primordial object is the infinite nothingness — the balanced parad
 - **[Metaphysical](./Metaphysical.md)** — numbers beyond direct representation
 - **[Physicalization & Metaphysicalization](./Physicalization.md)** — transforming between the two
 - **[Mystical Numbers](./Mystical.md)** — the boundary paradox at zero and infinity
-- **[The Resolution](./Resolution.md)** — infinite nothingness and the ouroboros operators
+- **[The Resolution](./Resolution/Resolution.md)** — infinite nothingness and the ouroboros operators
+- **[The Smoking Gun: Zero Powers of Zero](./SmokingGunZeroPowersOfZero.md)** — $0^0 = 1$ from oriented voids, not convention
 - **[Holographic Unity](./HolographicUnity.md)** — folding the numberline into itself
 - **[Box Math](./BoxMath.md)** — arithmetic on set-like number containers

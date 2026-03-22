@@ -15,7 +15,8 @@ A number system built around **length** and **precision**, the boundary paradox 
 - [Metaphysical](./Number/Metaphysical.md)
 - [Physicalization & Metaphysicalization](./Number/Physicalization.md)
 - [Mystical Numbers](./Number/Mystical.md)
-- [The Resolution](./Number/Resolution.md)
+- [The Resolution](./Number/Resolution/Resolution.md)
+- [The Smoking Gun: Zero Powers of Zero](./Number/SmokingGunZeroPowersOfZero.md)
 - [Holographic Unity](./Number/HolographicUnity.md)
 - [Box Math](./Number/BoxMath.md)
 
@@ -37,6 +38,8 @@ A number system built around **length** and **precision**, the boundary paradox 
 - [Smart Contracts](./Applications/SmartContracts.md)
 - [Ontological Completeness](./Applications/OntologicalCompleteness.md)
 - [Memristors](./Applications/Memristors.md)
+- [Balanced Ternary](./Applications/BalancedTernary.md)
+- [Bell's Inequality](./Applications/BellsInequality.md)
 
 $$
 \infty = 0
