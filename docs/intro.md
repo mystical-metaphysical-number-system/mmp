@@ -37,5 +37,5 @@ Ancient maths through an MMP lens — Egyptian number systems, π/φ/powers-of-2
 The *why* of rerouting box math — bridging pure and applied, precision vs exactness, harmonic proportions, music, smart contracts, ontological completeness, memristors, balanced ternary, Bell's inequality.
 
 - [Bridging](./Applications/Bridging.md) · [Precision vs Exactness](./Applications/PrecisionVsExactness.md) · [Harmonic Proportions](./Applications/HarmonicProportions.md) · [Music](./Applications/Music.md)
-- [Smart Contracts](./Applications/SmartContracts.md) · [Ontological Completeness](./Applications/OntologicalCompleteness.md) · [Memristors](./Applications/Memristors.md) · [Balanced Ternary](./Applications/BalancedTernary.md) · [Bell's Inequality](./Applications/BellsInequality.md)
+- [Smart Contracts](./Applications/SmartContracts.md) · [Ontological Completeness](./Applications/OntologicalCompleteness.md) · [Memristors](./Applications/Memristors.md) · [Balanced Ternary](./Applications/BalancedTernary.md) · [Bell's Inequality](./Applications/BellsInequality.md) · [Knot Theory](./Applications/KnotTheory.md)
 

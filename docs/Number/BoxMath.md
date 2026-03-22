@@ -54,6 +54,8 @@ $$
 7 \leftrightarrow 7_1 \text{ knot} \leftrightarrow \text{infinite nothingness folded 7 times}
 $$
 
-This reframes what integers mean in MMP: not a count of empty boxes assembled from a zero that was given, but a **topological invariant** of a self-knotted void. The empty box is still the unit. But the unit is not flat — it is a fold, and the number is the depth of the folding.
+<img src="/img/fig34_fig3.svg" style={{maxWidth: '100%'}} />
+
+This reframes what integers mean in MMP: not a count of empty boxes assembled from a zero that was given, but a **topological invariant** of a self-knotted void. The empty box is still the unit. But the unit is not flat — it is a fold, and the number is the depth of the folding. See [Knot Theory](../Applications/KnotTheory.md) for the full extension.
 
 _TODO: develop the full box arithmetic operations — addition, multiplication, and the higher-order caret operations_

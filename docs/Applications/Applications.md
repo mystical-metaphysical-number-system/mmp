@@ -19,3 +19,4 @@ The framework bridges the realm of ZFC real-number pureism and the realm of fini
 - **[Memristors](./Memristors.md)** — hysteresis loops and hiding information behind zero
 - **[Balanced Ternary](./BalancedTernary.md)** — Setun, efficiency, MMP as foundation
 - **[Bell's Inequality](./BellsInequality.md)** — noncommutativity of $\odot$ and hidden variables
+- **[Knot Theory](./KnotTheory.md)** — Tait's knots, integers as topological invariants of the void
