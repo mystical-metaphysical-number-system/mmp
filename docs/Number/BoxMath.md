@@ -40,21 +40,21 @@ $$
 
 ## Numbers as Knots of Nothingness
 
-In standard box arithmetic, $7$ would be represented as seven nested empty boxes — a flat count of units stacked from zero:
+In box arithmetic, $3$ is encoded as three copies of the empty box held in one box — a multiset, where repetition is allowed and order is unimportant:
 
 $$
-7 = \{\{\{\{\{\{\{\}\}\}\}\}\}\}
+3 = \{\{\}\;\{\}\;\{\}\}
 $$
 
-This is correct and computable. But MMP suggests a different reading of what that structure *is*. Each nesting is not "one more empty box added" — it is one more fold of the infinite nothingness into itself. $7$ is not a pile of seven zeroes. It is the infinite nothingness, knotted.
+This is correct and computable. But MMP suggests a different reading of what that structure *is*. Each empty box is not "one more zero added" — it is one more fold of the infinite nothingness. $3$ is not a pile of three zeroes. It is the infinite nothingness, knotted.
 
-The analogy is the **$7_1$ torus knot** — a single continuous strand that crosses itself exactly seven times to produce a closed, self-consistent object. The crossings are not separate things; they are the same strand in relationship with itself. Counting the crossings gives you the number, but the number *is* the knot — a topological fact about how nothingness has been folded.
+The analogy is the **$3_1$ trefoil knot** — the simplest non-trivial knot, a single continuous strand that crosses itself exactly three times to produce a closed, self-consistent object. The crossings are not separate things; they are the same strand in relationship with itself. Counting the crossings gives you the number, but the number *is* the knot — a topological fact about how nothingness has been folded.
 
 $$
-7 \leftrightarrow 7_1 \text{ knot} \leftrightarrow \text{infinite nothingness folded 7 times}
+3 \leftrightarrow 3_1 \text{ trefoil} \leftrightarrow \{\{\}\;\{\}\;\{\}\} \leftrightarrow \text{infinite nothingness folded 3 times}
 $$
 
-<img src="/img/fig34_fig3.svg" style={{maxWidth: '100%'}} />
+<div style={{background: 'white', padding: '1rem'}}><img src="/img/3184-Knot table.png" style={{maxWidth: '100%'}} /></div>
 
 This reframes what integers mean in MMP: not a count of empty boxes assembled from a zero that was given, but a **topological invariant** of a self-knotted void. The empty box is still the unit. But the unit is not flat — it is a fold, and the number is the depth of the folding. See [Knot Theory](../Applications/KnotTheory.md) for the full extension.
 
