@@ -22,13 +22,6 @@ function HomepageHeader() {
         <div className={styles.foundationalIdentity}>
           <BlockMath math={String.raw`(\infty \odot 0) \odot (0 \odot \infty) = \{\}_- \odot \{\}_+ = \{\{\}\}_+ = 0^0 = 1`} />
         </div>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Get Started
-          </Link>
-        </div>
       </div>
     </header>
   );

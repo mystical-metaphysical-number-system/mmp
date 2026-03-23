@@ -67,7 +67,9 @@ const config: Config = {
   ],
 
   themeConfig: {
-    colorMode: {respectPrefersColorScheme: true},
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
     navbar: {
       title: 'MMP',
       logo: {alt: 'MMP', src: 'img/logo.svg'},

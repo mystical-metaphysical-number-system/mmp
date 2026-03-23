@@ -3,15 +3,24 @@
  * and scoped locally.
  */
 
-.heroBanner {
-  padding: 4rem 0;
+
+[data-theme='dark'] .heroBanner {
+  height: calc(0.382 * (100vh - var(--ifm-navbar-height)));
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: radial-gradient(circle at center, var(--ifm-color-primary-lightest) 0%, var(--ifm-color-primary-light) 50%, var(--ifm-color-primary) 100%);
+}
+[data-theme='light'] .heroBanner {
+  height: calc(0.382 * (100vh - var(--ifm-navbar-height)));
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at center, var(--ifm-color-primary-darkest) 0%, var(--ifm-color-primary-darker) 50%, var(--ifm-color-primary-dark) 100%);
 }
 
 .heroTitle {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -20,21 +29,18 @@
 }
 
 .heroSubtitle {
+  margin: 0 auto 0;
   font-size: 1.15rem;
-  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  opacity: 0.6;
-  margin: 0 auto 0;
+  opacity: 0.618;
 }
 
 .heroTagline {
-  margin: 1rem auto 0;
+  margin: 0 auto;
   max-width: 680px;
   font-size: 1.0rem;
-  line-height: 1.6;
-  opacity: 0.6;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
 }
 
 @media screen and (max-width: 996px) {
@@ -50,13 +56,8 @@
 }
 
 .foundationalIdentity {
-  margin: 2rem auto 2.5rem;
-  padding: 1.25rem 2rem;
+  margin: 0 auto;
   max-width: 720px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
   font-size: 1.4rem;
   letter-spacing: 0.02em;
-  opacity: 0.92;
 }

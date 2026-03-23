@@ -3,6 +3,7 @@
   align-items: center;
   padding: 2rem 0;
   width: 100%;
+  height: calc(0.618 * (100vh - var(--ifm-navbar-height)));
 }
 
 .featureSvg {
