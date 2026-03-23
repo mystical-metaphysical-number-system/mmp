@@ -3,6 +3,18 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
+function NumberSvg({className}: {className?: string}) {
+  return <video src="/img/equation.webm" autoPlay muted loop playsInline className={className} style={{objectFit: 'contain'}} />;
+}
+
+function ArchaeoSvg({className}: {className?: string}) {
+  return <video src="/img/dor.webm" autoPlay muted loop playsInline className={className} style={{objectFit: 'contain'}} />;
+}
+
+function BoxSvg({className}: {className?: string}) {
+  return <video src="/img/thoth-palindrome.webm" autoPlay muted loop playsInline className={className} style={{objectFit: 'contain'}} />;
+}
+
 type FeatureItem = {
   title: string;
   Svg: React.ComponentType<React.ComponentProps<'svg'>>;
@@ -12,7 +24,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Number',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: NumberSvg,
     description: (
       <>
         Length and precision, physical and metaphysical, the boundary paradox,
@@ -21,22 +33,22 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Applications',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'ArchaeoArithmetic',
+    Svg: ArchaeoSvg,
     description: (
       <>
-        Music, smart contracts, harmonic proportions, and bridging pure and
-        applied mathematics.
+        The Great Pyramid, the cubit, π through φ, precession and the Great Year —
+        ancient mathematics through an MMP lens.
       </>
     ),
   },
   {
     title: 'Box Math',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: BoxSvg,
     description: (
       <>
         Arithmetic founded on the infinite nothingness, not the empty box.
-        Encodes directly to computation.
+        Numbers as knots. Encodes directly to computation.
       </>
     ),
   },

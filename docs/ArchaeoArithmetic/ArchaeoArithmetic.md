@@ -1,8 +1,10 @@
 ---
 sidebar_position: 3
+
+
 ---
 
-# ArchaeoArithmetic
+# ArchaeoArithmetic [Coming Soon]
 
 MMP is motivated by the persuasion that the constructors of the Great Pyramid had a more nuanced understanding of how nature absolves itself of incommensurability — *nature does not use π* (Buckminster Fuller) — and that this understanding was encoded in the pyramid.
 
