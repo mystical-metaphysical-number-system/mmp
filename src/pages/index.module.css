@@ -3,19 +3,23 @@
  * and scoped locally.
  */
 
-
-[data-theme='dark'] .heroBanner {
+.heroBanner {
   height: calc(0.382 * (100vh - var(--ifm-navbar-height)));
   text-align: center;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 996px) {
+    padding: 2rem;
+    height: calc(0.8 * (100vh - var(--ifm-navbar-height)));
+  }
+}
+
+/* theme gradients — html[data-theme] set by Docusaurus color mode */
+html[data-theme='dark'] .heroBanner {
   background: radial-gradient(circle at center, var(--ifm-color-primary-lightest) 0%, var(--ifm-color-primary-light) 50%, var(--ifm-color-primary) 100%);
 }
-[data-theme='light'] .heroBanner {
-  height: calc(0.382 * (100vh - var(--ifm-navbar-height)));
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+html[data-theme='light'] .heroBanner {
   background: radial-gradient(circle at center, var(--ifm-color-primary-darkest) 0%, var(--ifm-color-primary-darker) 50%, var(--ifm-color-primary-dark) 100%);
 }
 
@@ -43,11 +47,6 @@
   letter-spacing: 0.02em;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
 
 .buttons {
   display: flex;
@@ -60,4 +59,13 @@
   max-width: 720px;
   font-size: 1.4rem;
   letter-spacing: 0.02em;
+}
+
+@media (max-width: 996px) {
+  .foundationalIdentity {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
 }

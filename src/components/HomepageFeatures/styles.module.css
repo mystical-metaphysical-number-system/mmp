@@ -1,9 +1,16 @@
 .features {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding: 2rem 0;
   width: 100%;
   height: calc(0.618 * (100vh - var(--ifm-navbar-height)));
+}
+
+/* Match Docusaurus/Infima tablet breakpoint (navbar + row→column flip) */
+@media screen and (max-width: 996px) {
+  .features {
+    height: auto;
+  }
 }
 
 .featureSvg {
