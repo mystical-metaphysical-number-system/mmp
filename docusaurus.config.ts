@@ -16,9 +16,12 @@ const config: Config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
-  baseUrl: '/',
+  url: 'https://polus-arcticus.github.io',
+  baseUrl: '/mmp/',
+  organizationName: 'polus-arcticus',
+  projectName: 'mmp',
+  deploymentBranch: 'gh-pages',
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
 
@@ -84,9 +87,9 @@ const config: Config = {
           title: 'Docs',
           items: [
             {label: 'Introduction', to: '/docs/intro'},
-            {label: 'Number', to: '/docs/Number/Number'},
-            {label: 'ArchaeoArithmetic', to: '/docs/ArchaeoArithmetic/ArchaeoArithmetic'},
-            {label: 'Applications', to: '/docs/Applications/Applications'},
+            {label: 'Number', to: '/docs/Number'},
+            {label: 'ArchaeoArithmetic', to: '/docs/ArchaeoArithmetic'},
+            {label: 'Applications', to: '/docs/Applications'},
           ],
         },
       ],
