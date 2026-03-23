@@ -2,9 +2,11 @@
 sidebar_position: 2
 ---
 
+import DocVideo from '@site/src/components/DocVideo';
+
 # Number
 
-<video src="/img/mmp-4.webm" controls muted loop playsinline style={{maxWidth: '100%'}} />
+<DocVideo src="/img/mmp-4.webm" />
 
 This section develops a number system grounded in two properties — length and precision — and traces how they behave from ordinary numbers through the physical and metaphysical, into the boundary paradox at zero and infinity. The resolution of that paradox yields the infinite nothingness and the ouroboros operator; from there the numberline folds into a holofractal unity and box arithmetic arises as the natural arithmetic on set-like containers. The aim is a formal, detailed account of this whole arc.
 

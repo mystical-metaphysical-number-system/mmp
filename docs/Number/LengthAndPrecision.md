@@ -2,6 +2,8 @@
 sidebar_position: 2
 ---
 
+import DocVideo, {DocImg} from '@site/src/components/DocVideo';
+
 # Length & Precision
 
 Every number has two fundamental properties:
@@ -25,7 +27,7 @@ Each digit added reduces our displacement on the numberline. Precision is the ra
 
 This is the MMP framing of what Cauchy sequences describe analytically: the terms of a sequence are within $\frac{\varepsilon}{2}$ of the limit, find $N \in \mathbb{N}$ so that $|s_n - A| < \frac{\varepsilon}{2}$. In MMP language, the sequence is walking down the digits and the limit is the number it is trying to describe.
 
-<img src="/img/wildberger-cauchy.png" style={{maxWidth: '100%'}} />
+<DocImg src="/img/wildberger-cauchy.png" style={{maxWidth: '100%'}} />
 
 *Norman Wildberger on Cauchy sequences of rationals — [Real numbers and limits Math Foundations 111](https://www.youtube.com/watch?v=6JjPA3msnbo)*
 
@@ -39,13 +41,13 @@ $$
 
 Each successive ratio of consecutive Fibonacci terms is a better approximation — the displacement from $\varphi$ decreases with each step, length increases, precision tightens. The golden ratio is the **slowest** converging continued fraction precisely because it is maximally irrational: it demands the most length for the least precision gain per step.
 
-<img src="/img/1_keS1Io-VsoLjotdcOS34iA.gif" style={{maxWidth: '100%'}} />
+<DocImg src="/img/1_keS1Io-VsoLjotdcOS34iA.gif" style={{maxWidth: '100%'}} />
 
 In MMP terms, $\varphi$ is a number with infinite length and perpetually nonzero precision — yet the Fibonacci sequence demonstrates nature resolving it iteratively, digit by digit, ratio by ratio.
 
 ## The Circle Paradox
 
-<video src="/img/circle-apex.webm" controls muted loop playsinline style={{maxWidth: '100%', width: '100%'}} />
+<DocVideo src="/img/circle-apex.webm" />
 
 Here is a motivating hint at the deeper problem. We approximate a circle by increasing the number of vertices of a polygon — more sides, closer to the curve, precision tightens with each step. By MMP's framing this is a metaphysical number in progress: $\pi$ is being approached iteratively, length growing, displacement shrinking.
 

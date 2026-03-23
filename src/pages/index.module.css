@@ -10,6 +10,33 @@
   overflow: hidden;
 }
 
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.97;
+  margin-bottom: 0.25rem;
+}
+
+.heroSubtitle {
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin: 0 auto 0;
+}
+
+.heroTagline {
+  margin: 1rem auto 0;
+  max-width: 680px;
+  font-size: 1.0rem;
+  line-height: 1.6;
+  opacity: 0.6;
+  letter-spacing: 0.01em;
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
@@ -20,4 +47,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.foundationalIdentity {
+  margin: 2rem auto 2.5rem;
+  padding: 1.25rem 2rem;
+  max-width: 720px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 1.4rem;
+  letter-spacing: 0.02em;
+  opacity: 0.92;
 }

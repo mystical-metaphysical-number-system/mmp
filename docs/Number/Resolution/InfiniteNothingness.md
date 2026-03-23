@@ -2,9 +2,11 @@
 sidebar_position: 1
 ---
 
+import DocVideo from '@site/src/components/DocVideo';
+
 # The Infinite Nothingness
 
-<video src="/img/mmp-2.webm" controls muted loop playsinline style={{maxWidth: '100%', width: '100%'}} />
+<DocVideo src="/img/mmp-2.webm" />
 
 The [Mystical Numbers](../Mystical.md) section established that zero and infinity are complements — perfectly inverted in length and precision. A new operation is required to hold them in tension. The infinite nothingness is that tension made explicit: the result of applying the ouroboros operator ($\odot$) across the boundary.
 

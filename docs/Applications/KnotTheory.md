@@ -2,6 +2,8 @@
 sidebar_position: 10
 ---
 
+import {DocImg} from '@site/src/components/DocVideo';
+
 # Knot Theory
 
 ## Tait's Knots
@@ -19,7 +21,7 @@ Tait's insight was that knots are **topological invariants** — a knot cannot b
 | 6 | $6_1$, $6_2$, $6_3$ |
 | 7 | $7_1$, $7_2$, $7_3$, $7_4$, $7_5$, $7_6$, $7_7$ |
 
-<div style={{background: 'white', padding: '1rem'}}><img src="/img/3184-Knot table.png" style={{maxWidth: '100%'}} /></div>
+<div style={{background: 'white', padding: '1rem'}}><DocImg src="/img/3184-Knot table.png" style={{maxWidth: '100%'}} /></div>
 
 ## Numbers as Knots
 

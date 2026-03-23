@@ -2,6 +2,8 @@
 sidebar_position: 11
 ---
 
+import {DocImg} from '@site/src/components/DocVideo';
+
 # Box Math
 
 <iframe width="100%" style={{aspectRatio: '16/9'}} src="https://www.youtube.com/embed/4xoF2SRp194" title="Box Arithmetic" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
@@ -54,7 +56,7 @@ $$
 3 \leftrightarrow 3_1 \text{ trefoil} \leftrightarrow \{\{\}\;\{\}\;\{\}\} \leftrightarrow \text{infinite nothingness folded 3 times}
 $$
 
-<div style={{background: 'white', padding: '1rem'}}><img src="/img/3184-Knot table.png" style={{maxWidth: '100%'}} /></div>
+<div style={{background: 'white', padding: '1rem'}}><DocImg src="/img/3184-Knot table.png" style={{maxWidth: '100%'}} /></div>
 
 This reframes what integers mean in MMP: not a count of empty boxes assembled from a zero that was given, but a **topological invariant** of a self-knotted void. The empty box is still the unit. But the unit is not flat — it is a fold, and the number is the depth of the folding. See [Knot Theory](../Applications/KnotTheory.md) for the full extension.
 

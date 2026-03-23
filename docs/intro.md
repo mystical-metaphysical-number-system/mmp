@@ -2,9 +2,11 @@
 sidebar_position: 1
 ---
 
+import DocVideo from '@site/src/components/DocVideo';
+
 # The Mystical Metaphysical Number System
 
-<video src="/img/mmp-1.webm" controls muted loop playsinline style={{maxWidth: '100%', width: '100%'}} />
+<DocVideo src="/img/mmp-1.webm" />
 
 Standard mathematics has a silent convention problem. $0^0$ is indeterminate — except when it isn't, and then we justify the result by pointing at power series and empty products. Pi is transcendental and we move on, even as Buckminster Fuller noted that nature builds no circles. Zeno's paradoxes were never resolved, only reclassified. The real numbers are a magnificent scaffolding, but scaffolding built over a crack: something was smuggled in at the foundation and we have been managing the consequences ever since.
 

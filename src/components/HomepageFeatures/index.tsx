@@ -1,18 +1,19 @@
 import type {ReactNode} from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
-function NumberSvg({className}: {className?: string}) {
-  return <video src="/img/equation.webm" autoPlay muted loop playsInline className={className} style={{objectFit: 'contain'}} />;
+function TheorySvg({className}: {className?: string}) {
+  return <img src={useBaseUrl('/img/monad.png')} className={className} style={{objectFit: 'contain'}} />;
+}
+
+function ApplicationsSvg({className}: {className?: string}) {
+  return <video src={useBaseUrl('/img/dor.webm')} autoPlay muted loop playsInline className={className} style={{objectFit: 'contain'}} />;
 }
 
 function ArchaeoSvg({className}: {className?: string}) {
-  return <video src="/img/dor.webm" autoPlay muted loop playsInline className={className} style={{objectFit: 'contain'}} />;
-}
-
-function BoxSvg({className}: {className?: string}) {
-  return <video src="/img/thoth-palindrome.webm" autoPlay muted loop playsInline className={className} style={{objectFit: 'contain'}} />;
+  return <video src={useBaseUrl('/img/thoth-palindrome.webm')} autoPlay muted loop playsInline className={className} style={{objectFit: 'contain'}} />;
 }
 
 type FeatureItem = {
@@ -23,32 +24,29 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Number',
-    Svg: NumberSvg,
+    title: 'Theory',
+    Svg: TheorySvg,
     description: (
       <>
-        Length and precision, physical and metaphysical, the boundary paradox,
-        and the infinite nothingness.
+      MMP explores number and the nature of the continuum through the lens of length and precision. Leading to rebasing the box maths' collection of empty sets  into knots of the infinite nothingness.
       </>
     ),
   },
   {
-    title: 'ArchaeoArithmetic',
+    title: 'Archaeo-Arithmetic',
     Svg: ArchaeoSvg,
     description: (
       <>
-        The Great Pyramid, the cubit, π through φ, precession and the Great Year —
-        ancient mathematics through an MMP lens.
+      MMP was motivated through the geometric perfection of the great pyramid, and postulates the ancients, the direct inheritors of the atlantean tradition, had a more nuanced understanding of how nature absolves itself of incommensurability.
       </>
     ),
   },
   {
-    title: 'Box Math',
-    Svg: BoxSvg,
+    title: 'Applications',
+    Svg: ApplicationsSvg,
     description: (
       <>
-        Arithmetic founded on the infinite nothingness, not the empty box.
-        Numbers as knots. Encodes directly to computation.
+        Navigate cleanly between pure and applied mathematics — knowing which tool fits which domain. Reframes Bell's inequality, balanced ternary, and the memristor as natural consequences of oriented voids.
       </>
     ),
   },

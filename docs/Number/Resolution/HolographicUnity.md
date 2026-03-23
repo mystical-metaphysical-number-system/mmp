@@ -2,9 +2,11 @@
 sidebar_position: 2
 ---
 
+import DocVideo from '@site/src/components/DocVideo';
+
 # Holographic Unity
 
-<video src="/img/mmp-3.webm" controls muted loop playsinline style={{maxWidth: '100%', width: '100%'}} />
+<DocVideo src="/img/mmp-3.webm" />
 
 ## The Ouroboros Operator
 
@@ -43,7 +45,7 @@ The void itself has three distinct characters:
 | | Object | Nature |
 |--|--------|--------|
 | Null | $\{\}$ | unresolved, the pole itself — prior to orientation |
-| Positive void | $\{\}_+$ | oriented upward, approached from zero |
+| Positive void | $\{\}_+$ | oriented upward, approached from zero |s 
 | Negative void | $\{\}_-$ | oriented downward, approached from infinity |
 
 $\{\}_+$ as "positive zero" and $\{\}_-$ as "negative zero" maps onto the IEEE 754 floating-point distinction between $+0$ and $-0$ — which most programmers treat as a curiosity but MMP would say is **physically necessary**. The computer already knew.
