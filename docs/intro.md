@@ -12,9 +12,12 @@ As analysis dispensed the geometers, and the Renaissance minds laid content on t
 
 Rounding errors made explicit by those geometric attempts to rescue the number, dissonance becomes apparent between the ratios and the powers of 1/12 and once again does one become infatuated with the cosmic proportionality of the pyramid, from its reflection in the scale of the moon and earth, and to the hydrogen fine spectrum's alpha 137.5 volume relation in the King's Chamber — a unification of the cosmos resting atop Kepler's triangle.
 <DocImg src="/img/pyramid-fine-structure.png" style={{maxWidth: '100%'}} />
+
+*Source:* [Great Pyramid encodes physics' most mysterious number](https://www.youtube.com/watch?v=gPhEtKlKWH4)
 A user naively basking in the dominion of the real number system expects subconsciously from the computer the world of decimation at the touch of the sqrt(2) button on their calculator. The geometer is lucky to discern just one degree of precision from their lines drawn perpendicularly in the sand. The computer then rests in the unfortunate chasm in between — demanding geometric resolution on the hardware level while trying to provide the illusion of the real number system in user space.
 
 <DocVideo src="/img/john-gabriel.webm" />
+*Source:* [Square root of two is not a number](https://www.youtube.com/watch?v=B3AlAil5Crc)
 Thus it is a good time to note that MMP is neither a finitist nor an infinitist philosophy, nor a purported third position. It is a Rosetta stone, a keystone between two mathematical canons which have withstood the sands of time and reached the orbits of the moon. It is the unfortunate circumstance that the majority of readers herein come almost exclusively from only the real number canon — thus may demand additional justification and explanation toward what finitists would find immediately apparent. All are welcome here at MMP.
 
 :::info
