@@ -13,11 +13,17 @@ As analysis dispensed the geometers, and the Renaissance minds laid content on t
 Rounding errors made explicit by those geometric attempts to rescue the number, overtone locking for ringing chords isn't possible in 12-TET to the same degree as the limit tuning, and again one has reason to become infatuated with the cosmic proportionality of the pyramid, from its reflection in the scale of the moon and earth, to the hydrogen fine spectrum's alpha 137.5 volume relation in the King's Chamber — a unification of the cosmos resting atop Kepler's triangle.
 <DocImg src="/img/pyramid-fine-structure.png" style={{maxWidth: '100%'}} />
 
+
 *Source:* [Great Pyramid encodes physics' most mysterious number](https://www.youtube.com/watch?v=gPhEtKlKWH4)
+
+*Source:* [phi in the great pyramid](https://www.sacred-geometry.es/?q=en/content/phi-great-pyramid)
+
 A user naively basking in the dominion of the real number system expects subconsciously from the computer the world of decimation at the touch of the sqrt(2) button on their calculator. The geometer is lucky to discern just one degree of precision from their lines drawn perpendicularly in the sand. The computer then rests in the unfortunate chasm in between — demanding geometric resolution on the hardware level while trying to provide the illusion of the real number system in user space.
 
 <DocVideo src="/img/john-gabriel.webm" />
+
 *Source:* [Square root of two is not a number](https://www.youtube.com/watch?v=B3AlAil5Crc)
+
 Thus it is a good time to note that MMP is neither a finitist nor an infinitist philosophy, nor a purported third position. It is a Rosetta stone, a keystone between two mathematical canons which have withstood the sands of time and reached the orbits of the moon. It is the unfortunate circumstance that the majority of readers herein come almost exclusively from only the real number canon — thus may demand additional justification and explanation toward what finitists would find immediately apparent. All are welcome here at MMP.
 
 :::info
@@ -32,7 +38,17 @@ successive wave before nature finds out that pi can never be resolved?"* . . .
 
 MMP begins by asking what zero actually *is*. Not a placeholder, not an absence — a **pole**. Zero has infinite precision and no length; infinity has infinite length and no precision. They are not opposites, they are partners. The empty box is not a starting point but a *result* — it only emerges when opposite polarities balance. It is only by that quaternary balancing of poles that the continuum is bequeathed at all.
 
-From this, $0^0 = 1$ is not a convention inherited from combinatorics or a simplifying assumption that keeps power series tidy. It is a statement about **climbing a dimension with no length**: the base zero approaches from infinity ($\{\}_-$), the exponent zero approaches from zero ($\{\}_+$), and their cross-composition necessarily produces one nesting — unity. The result is universal and fundamental to the algebra, not derived from its consequences.
+From this, the paradoxical identity $0^0 \equiv 1$ is not a convention inherited from combinatorics or a simplifying assumption that keeps power series tidy. It derives from an idea that these zeros, what ever they may be, have some sort of stress energy vibratring inside itself yet balanced to the outside.  The $1 + -1 = 0$ not being a queiting or serenity, but an equal tension of opposing forces.  If only there was such an operator where we could express and idea where , if we able to bring two games of tug of war together, we were able make both sides win the game, by mutually difecting to each others ropes simultaneously, or perhaps have two snakes initially eating thier own tails at last have them distract themeselves on each others tails.
+
+when viewing the identity geometrically, we note $x^y=k$ as a geometric, dimension hopping construction. $x^y=k$ is a square $l^2=A$, a cube $l^3=V$ so by the geometric reasoning going from cube to square is 3 to 2, square to line is 2 to 1, line to point is 1 to 0, so what is the terminus or generator 0 to 0.  
+
+
+ and MMP solves it with infinite nothingness and the oroboros operator.
+
+
+
+ As a statement about **climbing no dimension with no length**: it necesistates that zero aught to be viewed as some sort of balanced stress energy vibrating inside instead of a dead inert mass, a sort of z pinch has to take place to donut or implode these zeros to break the bonds each has on its location and momentum sufficiently or location and precision and lead to a fusion of the infinites length with the nothingness precision alongside the infinites lack of precicions aligning with the nothingnes lack of length- in the latter we see an infinite cosmos, in the former we see 1 individual object- the unity
+
 
 Whether this recovers something the Egyptian priests understood and the Greeks only partially received, or simply discovers something new by looking in an old direction — the pyramid was built to last; perhaps it was also built to be read — we cannot say with certainty. What we can say is that the algebra is simple, the results are sharp, and the questions it opens are worth asking.
 
