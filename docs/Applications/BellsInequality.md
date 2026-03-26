@@ -14,10 +14,10 @@ is violated by quantum mechanics: nature is either nonlocal, or measurement outc
 
 The standard framing assumes measurement outcomes are binary $\{-1, +1\}$ — spin up or spin down. But the **act of measurement** — the moment before the outcome resolves — is exactly the **null** state. The particle is not $\{\}_+$ or $\{\}_-$ until **cross-composition** happens, until two oriented contexts meet.
 
-Bell violation in MMP terms: the assumption that particles carry predetermined $\{\}_+$ or $\{\}_-$ before measurement is the hidden variable assumption. MMP says no — they carry **null** $\{\}$, and the outcome is determined by *which oriented void meets which*. The **order** of $\odot$ matters:
+Bell violation in MMP terms: the assumption that particles carry predetermined $\{\}_+$ or $\{\}_-$ before measurement is the hidden variable assumption. MMP says no — they carry **null** $\{\}$, and the outcome is determined by *which oriented void meets which*. The **order** of $\circlearrowright$ matters:
 
 $$
-\{\}_- \odot \{\}_+ \neq \{\}_+ \odot \{\}_-
+\{\}_- \circlearrowright \{\}_+ \neq \{\}_+ \circlearrowright \{\}_-
 $$
 
-The **noncommutativity** of $\odot$ is the Bell violation. You cannot assume a predetermined sign because the sign is *produced by the meeting*, not carried into it.
+The **noncommutativity** of $\circlearrowright$ is the Bell violation. You cannot assume a predetermined sign because the sign is *produced by the meeting*, not carried into it.

@@ -12,17 +12,17 @@ import DocVideo from '@site/src/components/DocVideo';
 
 Having established that zero and infinity are complementary poles — each possessing exactly what the other lacks — we demand for ourselves an operation that can hold them in balance. The requirement is precise: an operation that allows the precision of nothingness to balance the length of infinity, and vice versa, in a quaternary form where both poles are present and neither cancels the other into silence.
 
-We define this as the **ouroboros operator** $\odot$, whose responsibility is to fractally recurse in and out of higher-dimensional multinumbers. It does not add or multiply in the ordinary sense — it *orients* and *composes* voids, folding the numberline into itself. The name reflects its nature: the snake consuming its own tail, the operation that connects the two ends of the number system into a closed, self-referential whole.
+We define this as the **ouroboros operator** $\circlearrowright$, whose responsibility is to fractally recurse in and out of higher-dimensional multinumbers. It does not add or multiply in the ordinary sense — it *orients* and *composes* voids, folding the numberline into itself. The name reflects its nature: the snake consuming its own tail, the operation that connects the two ends of the number system into a closed, self-referential whole.
 
-There is one operator — $\odot$ — and it acts on oriented voids. Its behavior depends entirely on whether the orientations of its operands match or cross.
+There is one operator — $\circlearrowright$ — and it acts on oriented voids. Its behavior depends entirely on whether the orientations of its operands match or cross.
 
 ## Cross-composition
 
 Opposite orientations meeting promotes to the nested level. The **order** of that crossing determines the sign of unity:
 
 $$
-\{\}_- \odot \{\}_+ = \{\{\}\}_+ = 1 \\
-\{\}_+ \odot \{\}_- = \{\{\}\}_- = -1
+\{\}_- \circlearrowright \{\}_+ = \{\{\}\}_+ = 1 \\
+\{\}_+ \circlearrowright \{\}_- = \{\{\}\}_- = -1
 $$
 
 ## Self-composition (Superposition Principle)
@@ -30,8 +30,8 @@ $$
 Same orientations stay at the void level. $\{\}_+$ and $\{\}_-$ are **fixed points** of same-sign composition; they absorb themselves rather than promoting:
 
 $$
-\{\}_- \odot \{\}_- = \{\}_- \\
-\{\}_+ \odot \{\}_+ = \{\}_+
+\{\}_- \circlearrowright \{\}_- = \{\}_- \\
+\{\}_+ \circlearrowright \{\}_+ = \{\}_+
 $$
 
 - Left `N` with right `dN`
@@ -58,21 +58,41 @@ $$
 
 Note that addition here is idempotent at the void level: same-orientation addition stays put, $\{\}_- + \{\}_- = \{\}_-$. Void does not accumulate magnitude.
 
-## Two Operations, Two Natures
+## The Demotion Operator $\circlearrowleft$
 
-Addition and the ouroboros operator act on the same objects but do fundamentally different things:
+If $\circlearrowright$ is the ouroboros consuming outward — nesting, promoting, climbing rank — then $\circlearrowleft$ is the ouroboros unravelling inward. It strips one level of nesting, reducing rank. The right operand is the orientation key specifying which pole to strip against:
 
-**Addition** is like two objects colliding — they meet, combine, and the result is their sum. Same orientations stay at the void level; opposite orientations cancel back to null. Nothing changes dimension.
+$$
+\begin{aligned}
+\{\{\}\}_+ \circlearrowleft \{\}_- &= \{\}_+ \\
+\{\{\}\}_- \circlearrowleft \{\}_+ &= \{\}_- \\
+\{\{\{\}\}\}_- \circlearrowleft \{\}_+ &= \{\{\}\}_+ = 1 \quad \text{(strip one level)} \\
+\{\{\{\}\}\}_+ \circlearrowleft \{\}_- &= \{\{\}\}_- = -1
+\end{aligned}
+$$
 
-**The ouroboros operator** is like taking one object and donuting it inside the other — the inner object is nested inside the outer, and the result exists at a higher level than either operand. Cross-composition doesn't combine; it *promotes*.
+Cross-orientation strips one nesting level; same-orientation is a fixed point — the symmetric mirror of self-composition under $\circlearrowright$.
+
+## Three Operations, Three Natures
+
+Addition, promotion, and demotion act on the same objects but do fundamentally different things:
+
+**Addition** is like two objects colliding — they meet and the result is their sum. Same orientations stay; opposite orientations cancel to null. Nothing changes rank.
+
+**Promotion** $\circlearrowright$ is like donuting one object inside the other — the result lives at a strictly higher rank than either operand. Cross-composition climbs.
+
+**Demotion** $\circlearrowleft$ is like unrolling — it peels back one nesting level, descending rank. Cross-demotion strips; same-demotion stays.
 
 $$
 \{\}_- + \{\}_+ = \{\} \quad \text{(collision — cancellation)}
 $$
 $$
-\{\}_- \odot \{\}_+ = \{\{\}\} = 1 \quad \text{(donuting — promotion to unity)}
+\{\}_- \circlearrowright \{\}_+ = \{\{\}\}_+ = 1 \quad \text{(donuting — promotion to unity)}
+$$
+$$
+\{\{\}\}_+ \circlearrowleft \{\}_- = \{\}_+ \quad \text{(unrolling — demotion to void)}
 $$
 
-The same two voids, two different operations, two different outcomes. Which operator is applied determines whether you collapse to null or climb to unity.
+The same objects, three operators, three different rank trajectories. Which operator is applied determines whether you collapse to null, climb to unity, or descend back to the void.
 
 _TODO: describe how the numberline folds into itself and the self-similar holofractal structure that results_

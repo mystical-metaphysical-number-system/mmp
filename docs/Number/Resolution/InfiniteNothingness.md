@@ -8,13 +8,13 @@ import DocVideo from '@site/src/components/DocVideo';
 
 <DocVideo src="/img/mmp-2.webm" />
 
-The [Mystical Numbers](../Mystical.md) section established that zero and infinity are complements — perfectly inverted in length and precision. A new operation is required to hold them in tension. The infinite nothingness is that tension made explicit: the result of applying the ouroboros operator ($\odot$) across the boundary.
+The [Mystical Numbers](../Mystical.md) section established that zero and infinity are complements — perfectly inverted in length and precision. A new operation is required to hold them in tension. The infinite nothingness is that tension made explicit: the result of applying the ouroboros operator ($\circlearrowright$) across the boundary.
 
 The paradox resolves into two extremal states and a null:
 
 $$
-0 \odot \infty = \{\}_+ \quad \text{(frame up — orientating up a dimension)} \\
-\infty \odot 0 = \{\}_- \quad \text{(frame down — orientating down a dimension)}
+0 \circlearrowright \infty = \{\}_+ \quad \text{(frame up — orientating up a dimension)} \\
+\infty \circlearrowright 0 = \{\}_- \quad \text{(frame down — orientating down a dimension)}
 $$
 
 The null $\{\}$ is the unresolved pole — level 0, prior to any orientation. The two oriented voids $\{\}_+$ and $\{\}_-$ are level 1. Cross-composition of the oriented voids promotes to level 2 (see [Holographic Unity](./HolographicUnity.md)).

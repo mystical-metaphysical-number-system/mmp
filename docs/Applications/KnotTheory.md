@@ -41,4 +41,4 @@ This also clarifies why you cannot have a fractional knot: topological invariant
 
 _TODO: explore knot invariants (Jones polynomial, Alexander polynomial) as potential box arithmetic operations_
 
-_TODO: **Sphere eversion** — Smale's proof that a sphere can be turned inside-out through itself without tearing or creasing, passing through self-intersections. Consider how MMP's frame-up/frame-down operators ($\{\}_+$ / $\{\}_-$) and the notion of dimension-climbing via $\odot$ might provide a natural language for describing eversion: the inside-out transition as a change of orientation of the void, passing through null $\{\}$ at the moment of self-intersection._
+_TODO: **Sphere eversion** — Smale's proof that a sphere can be turned inside-out through itself without tearing or creasing, passing through self-intersections. Consider how MMP's frame-up/frame-down operators ($\{\}_+$ / $\{\}_-$) and the notion of dimension-climbing via $\circlearrowright$ might provide a natural language for describing eversion: the inside-out transition as a change of orientation of the void, passing through null $\{\}$ at the moment of self-intersection._

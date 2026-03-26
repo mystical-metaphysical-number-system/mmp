@@ -16,14 +16,39 @@ made inevitable by the oriented void sequence.
 
 $$
 \begin{aligned}
-0 \odot \infty &= \{\}_+ \\
-\infty \odot 0 &= \{\}_- \\
-\{\}_- \odot \{\}_+ &= \{\{\}\}_+ = 1 = 0^0 \\
-\{\}_+ \odot \{\}_- &= \{\{\}\}_- = -1 \\
-\{\}_- \odot \{\}_- &= \{\}_- \\
-\{\}_+ \odot \{\}_+ &= \{\}_+
+0 \circlearrowright \infty &= \{\}_+ \\
+\infty \circlearrowright 0 &= \{\}_- \\
+\{\}_- \circlearrowright \{\}_+ &= \{\{\}\}_+ = 1 = 0^0 \\
+\{\}_+ \circlearrowright \{\}_- &= \{\{\}\}_- = -1 \\
+\{\}_- \circlearrowright \{\}_- &= \{\}_- \\
+\{\}_+ \circlearrowright \{\}_+ &= \{\}_+
 \end{aligned}
 $$
+
+## The demotion operator $\circlearrowleft$
+
+The promotion operator $\circlearrowright$ nests voids — it increases rank. The **demotion operator** $\circlearrowleft$ is its inverse: it strips one level of nesting, reducing rank. Where $\circlearrowright$ is the ouroboros consuming outward, $\circlearrowleft$ is the ouroboros unravelling inward.
+
+$$
+\begin{aligned}
+\{\{\}\}_+ \circlearrowleft \{\}_- &= \{\}_+ \\
+\{\{\}\}_- \circlearrowleft \{\}_+ &= \{\}_- \\
+\{\{\{\}\}\}_- \circlearrowleft \{\}_+ &= \{\{\}\}_+ = 1 \quad \text{(strip one level)} \\
+\{\{\{\}\}\}_+ \circlearrowleft \{\}_- &= \{\{\}\}_- = -1
+\end{aligned}
+$$
+
+The operand on the right is the **orientation key** — it specifies which pole to strip against. The rule: cross-orientation strips one nesting level and flips the residual sign; same-orientation is the self-composition fixed point (as with $\circlearrowright$).
+
+### The boundary condition
+
+Demotion at the floor re-opens the mystical paradox — the snake eats its own tail back to the beginning:
+
+$$
+\{\}_+ \circlearrowleft \{\}_- = 0 \circlearrowright \infty = \{\}_+
+$$
+
+There is no nesting level to strip, so demotion re-triggers the original ouroboros composition. The structure is genuinely cyclic — the floor is not a wall but a doorway back to the paradox that generated the void in the first place.
 
 ## What this resolves
 
@@ -36,7 +61,7 @@ Standard mathematics hedges on $0^0$ because it collapses both zeros into the sa
 When we write $0^0$ in the finite symbol system, MMP reads a **mystical expression**: the $0$s and $\infty$s in play belong to the **ouroboros operator**, not to the ordinary arithmetic operator set. We are still satisfied with the algebraic relation $0^0 = 1$, but we derive it as
 
 $$
-\{\}_- \odot \{\}_+ = \{\{\}\} = 1 = 0^0 .
+\{\}_- \circlearrowright \{\}_+ = \{\{\}\} = 1 = 0^0 .
 $$
 
 For someone versed in MMP, this is the infinite nothingness "raised to" the infinite nothingness — **dimensionally** akin to folding the infinite nothingness into itself.
@@ -53,42 +78,10 @@ MMP asks first: *what kind of thing is zero?* The answer — zero is not mere ab
 
 The ancient intuition that zero and infinity are partners rather than opposites, and that nothingness has direction, is what **dissolves the ambiguity** without appealing to combinatorics or power series alone: a categorical claim on nothingness, not an identity chosen for downstream convenience.
 
-## Balanced Ternary (Setun)
-
-The Soviet Setun computer (1958, Nikolay Brusentsov) operated in **balanced ternary** with digits $\{-1, 0, +1\}$ (written $\{\bar{1}, 0, 1\}$). Brusentsov showed it is the *most efficient* radix for information encoding — it minimizes the product of radix and number of digits needed for a given range.
-
-MMP maps onto this exactly:
-
-| MMP | Balanced Ternary |
-|-----|------------------|
-| $\{\}_-$ | $-1$ trit |
-| null $\{\}$ | $0$ trit |
-| $\{\}_+$ | $+1$ trit |
-
-But MMP adds something Setun does not: it explains *why* these three are the natural primitives. They are not chosen for efficiency; they **fall out of the oriented void algebra**. The trinary is not imposed, it is discovered.
-
-Brusentsov noted that balanced ternary handles negation for free — flip all signs, no two's complement. In MMP terms: $\{\}_+ \leftrightarrow \{\}_-$ — the ouroboros reversal.
-
-## Bell's Inequality
-
-Bell's theorem shows that no local hidden variable theory can reproduce quantum correlations. The inequality
-
-$$
-|E(a,b) - E(a,c)| \leq 1 + E(b,c)
-$$
-
-is violated by quantum mechanics: nature is either nonlocal, or measurement outcomes are not predetermined.
-
-The standard framing assumes measurement outcomes are binary $\{-1, +1\}$ — spin up or spin down. But the **act of measurement** — the moment before the outcome resolves — is exactly the **null** state. The particle is not $\{\}_+$ or $\{\}_-$ until **cross-composition** happens, until two oriented contexts meet.
-
-Bell violation in MMP terms: the assumption that particles carry predetermined $\{\}_+$ or $\{\}_-$ before measurement is the hidden variable assumption. MMP says no — they carry **null** $\{\}$, and the outcome is determined by *which oriented void meets which*. The **order** of $\odot$ matters:
-
-$$
-\{\}_- \odot \{\}_+ \neq \{\}_+ \odot \{\}_-
-$$
-
-The **noncommutativity** of $\odot$ is the Bell violation. You cannot assume a predetermined sign because the sign is *produced by the meeting*, not carried into it.
-
 ## Corroboration
 
-Setun found trinary with oriented zero from engineering efficiency. Bell found its necessity from physics. MMP finds it from the structure of nothingness itself. Trinary with oriented zero is not a curiosity — it is the natural algebra of systems that exist in superposition before resolution.
+The trinary structure $\{\{\}_-, \{\}, \{\}_+\}$ is not a curiosity — it is the natural algebra of systems that exist in superposition before resolution. Two independent lines of evidence arrive at the same conclusion:
+
+**[Balanced Ternary](../Applications/BalancedTernary.md)** — The Soviet Setun computer found it from engineering efficiency: balanced ternary is the most information-dense radix. MMP explains *why* those three digits are the natural primitives — they fall out of the oriented void algebra, not from an optimisation search.
+
+**[Bell's Inequality](../Applications/BellsInequality.md)** — The noncommutativity of $\circlearrowright$ is the Bell violation. Particles carry null $\{\}$ before measurement; the sign is produced by *which oriented void meets which*, not carried in advance. The hidden variable assumption is the assumption that orientation is predetermined.

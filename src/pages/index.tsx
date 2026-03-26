@@ -20,7 +20,7 @@ function HomepageHeader() {
         <p className={styles.heroSubtitle}>{siteConfig.title}</p>
         <p className={clsx('hero__subtitle', styles.heroTagline)}>{siteConfig.tagline}</p>
         <div className={styles.foundationalIdentity}>
-          <BlockMath math={String.raw`(\infty \odot 0) \odot (0 \odot \infty) = \{\}_- \odot \{\}_+ = \{\{\}\}_+ = 0^0 = 1`} />
+          <BlockMath math={String.raw`(\infty \circlearrowright 0) \circlearrowright (0 \circlearrowright \infty) = \{\}_- \circlearrowright \{\}_+ = \{\{\}\}_+ = 0^0 = 1`} />
         </div>
       </div>
     </header>

@@ -37,10 +37,10 @@ The V-I diagram of the memristor is not just a device characteristic — in MMP 
 The two boundary conditions are both $\{\}$, arrived at from opposite directions:
 
 $$
-0 \odot \infty = \{\}_+ \quad \text{(short circuit — } R=0, I=\infty \text{)}
+0 \circlearrowright \infty = \{\}_+ \quad \text{(short circuit — } R=0, I=\infty \text{)}
 $$
 $$
-\infty \odot 0 = \{\}_- \quad \text{(open circuit — } R=\infty, I=0 \text{)}
+\infty \circlearrowright 0 = \{\}_- \quad \text{(open circuit — } R=\infty, I=0 \text{)}
 $$
 
 Every point on the hysteresis curve is a ratio of these two voids held in tension. The device's operating range is literally the interior of that dialectic. The **hysteresis loop is the device remembering which direction it traversed the continuum** — the memristor is a physical MMP accumulator.
@@ -50,7 +50,7 @@ Every point on the hysteresis curve is a ratio of these two voids held in tensio
 Unity is recovered when the void is nested inside itself — $\{\{\}\} = 1$. In circuit terms, two memristors in series piping one pole into the other instantiate this exactly:
 
 $$
-\text{short} \xrightarrow{\{\}_+} \text{[device]} \xrightarrow{\{\}_-} \text{open} \xrightarrow{\odot} \{\{\}\} = 1
+\text{short} \xrightarrow{\{\}_+} \text{[device]} \xrightarrow{\{\}_-} \text{open} \xrightarrow{\circlearrowright} \{\{\}\} = 1
 $$
 
 The output terminus where the two poles meet is where unity is recovered — the fixed point, the thing that stays the same as everything changes. The two crossbars $G$ and $G^T$ with short piped into one end and open into the other are physically instantiating the cross-composition of the oriented voids.

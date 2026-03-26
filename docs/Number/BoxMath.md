@@ -21,7 +21,7 @@ The notation maps directly to the void algebra:
 | Box Arithmetic | MMP |
 |---------------|-----|
 | empty box $\{\}$ = zero | null void $\{\}$ |
-| nested box $\{\{\}\}$ = one | $\{\}_- \odot \{\}_+ = \{\{\}\} = 1$ |
+| nested box $\{\{\}\}$ = one | $\{\}_- \circlearrowright \{\}_+ = \{\{\}\} = 1$ |
 | multiset (repetition allowed) | box with multiplicity |
 
 ## The MMP Rebasing
