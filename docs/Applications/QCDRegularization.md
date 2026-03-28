@@ -6,7 +6,33 @@ sidebar_position: 11
 
 Quantum chromodynamics — the theory of the strong force — is arguably the most precisely tested physical theory we have. Yet at its computational core sits a procedure that standard mathematics cannot fully justify: **regularization**, the controlled navigation of divergences at the boundary of the number system.
 
-MMP's oriented void algebra offers a natural language for what is actually happening.
+MMP's oriented void algebra offers a natural language for what is actually happening. Before ascending to full QCD, it is worth grounding the ideas in the simplest possible case.
+
+## The 0-dimensional toy model
+
+Strip away all of spacetime. A **0-dimensional quantum field** $\phi$ is a single variable — no position, no time, just a value. The "path integral" collapses to an ordinary integral, and the probability density is simply:
+
+$$
+P(\phi) = N \, e^{-S(\phi)}
+$$
+
+where $S(\phi)$ is the **action** (for a quartic theory, $S(\phi) = \frac{m^2}{2}\phi^2 + \frac{\lambda}{4!}\phi^4$) and $N = 1/Z$ is the normalization factor that makes the total probability integrate to one:
+
+$$
+Z = \int d\phi \; e^{-S(\phi)}
+$$
+
+This is the **partition function** — the total weight of all possible field values.
+
+### The MMP reading
+
+$\phi$ in 0D has **zero length**: it occupies no spatial extent whatsoever. Yet it carries a full probability distribution — it has **precision** through $P(\phi)$. This is the $\{\}_+$ end of the MMP number line: zero length, non-zero precision.
+
+The normalization $N = 1/Z$ is equally stark. $Z$ is the integral over all values of $\phi$ — the full "length" of the space of possibilities. $N$ is its reciprocal: as the space of possibilities grows ($Z \to \infty$), the normalization shrinks ($N \to 0$). Length and precision trade off exactly as MMP predicts.
+
+The action $S(\phi)$ is the **weight** assigned to each value of $\phi$. It peaks where the field is most probable, falls off at the tails. The poles of the theory — where $e^{-S(\phi)}$ diverges or where $Z$ fails to converge — are exactly the points where the field tries to sit at $\phi \to \pm\infty$. These are the oriented poles $\{\}_-$ and $\{\}_+$ re-entering through the unbounded tails of the distribution.
+
+In 0D there are no loop momenta, so there are no UV/IR divergences of the momentum-integral type. But the boundary structure is already visible: **the partition function is finite only when $S(\phi)$ grows fast enough to tame the tails** — only when the poles are oriented correctly and the integral can close.
 
 ## The divergence problem
 
