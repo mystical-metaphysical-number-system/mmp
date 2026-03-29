@@ -57,4 +57,23 @@ The output terminus where the two poles meet is where unity is recovered — the
 
 A binary memristor reads two states (high resistance / low resistance) and discards the directional information. The **quaternary unit cell** preserves it — treating each memristor as an oriented void (three states: $\{\}_+$, $\{\}_-$, null) with directional memory. The information hidden behind zero is not lost; it is encoded in the memristance at the crossing point. The device knows which direction it came from, and that history *is* the computation.
 
-_TODO: formalize the mapping between memristor state transitions and ouroboros operator compositions_
+## NIMPLY logic and the ouroboros shadow
+
+Memristive logic has a natural gate primitive: the **NIMPLY gate** (material nonimplication, $A \nrightarrow B$), implementable directly with a single memristor and a ground voltage.
+
+| A | B | A ↛ B |
+|:-:|:-:|:-----:|
+| 0 | 0 | 0 |
+| 0 | 1 | 0 |
+| 1 | 0 | **1** |
+| 1 | 1 | 0 |
+
+NIMPLY fires only when the *left* operand is 1 and the *right* is 0 — it is **non-commutative** by construction ($A \nrightarrow B \neq B \nrightarrow A$ in general).
+
+However, NIMPLY alone is **not** functionally complete. It is **0-preserving**: if all inputs are 0, the output is 0, so it cannot generate the constant 1 and cannot escape that corner of the Boolean lattice. Functional completeness requires pairing it with something that breaks the 0-preservation constraint — most directly, a **circuit ground** providing a constant 1 (or equivalently, \{NIMPLY, NAND\}). With grounding, NOT $A$ = NIMPLY(1, A) becomes available and the full Boolean lattice is accessible.
+
+This is the same structural constraint as $\circlearrowright$ under Rule B (same-orientation): $\{\}_+ \circlearrowright \{\}_+ = \{\}_+$ — absorptive, no rank increase, stuck at the void level. The generative step only fires under **cross-composition** (Rule A), which requires the opposite orientation to be present as a reference. The circuit ground in NIMPLY logic plays exactly this role: it is the **null $\{\}$** — the unoriented reference — whose presence breaks the absorptive fixed point and makes generation possible.
+
+Without the ground: 0-preserving, incomplete. With the ground: complete. Without the oriented null: self-absorbing. With the null providing the cross-reference: generative. The structural requirement is identical.
+
+_TODO: work out whether a ternary memristive NIMPLY — three conditioning levels corresponding to $\{\}_-$, $\{\}$, $\{\}_+$ — can implement $\circlearrowright$ directly, and whether functional completeness extends to the full oriented void algebra_
