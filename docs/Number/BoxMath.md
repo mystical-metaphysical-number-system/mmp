@@ -26,6 +26,8 @@ The notation maps directly to the void algebra:
 
 ## The MMP Rebasing
 
+<DocImg src="/img/mmp-reparse.png" style={{maxWidth: '100%'}} />
+
 Wildberger's construction starts from the empty box $\{\}$ as the primordial object — zero is given, and everything is built by nesting from there. This is clean, finite, and computable. MMP accepts all of that.
 
 The single departure: **the empty box is not primordial**. It is derived.
