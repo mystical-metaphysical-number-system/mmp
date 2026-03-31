@@ -169,12 +169,12 @@ Numerically, $\left|r-\frac{1}{\phi}\right| \approx$ {(() =>
 one may find this patter rather strange, this fuzzy correlative to the hundreths and thousanths, coincidence exists in the higher dimensions, consider again below at dimension 2
 
 
-| Dim | Equation term | Solved $x_{\pi,n}$ | $\phi$ form | abs$(x_{\pi,n}-\pi)$ | target $t_n$ | abs$(\text{abs}(x_{\pi,n}-\pi)-t_n)$ |
+| Dim | n-volume | Solved $x_{\pi,n}$ | $\phi$ form | abs$(x_{\pi,n}-\pi)$ | target $t_n$ | abs$(\text{abs}(x_{\pi,n}-\pi)-t_n)$ |
 |---|---|---|---|---:|---|---:|
-| 0D | point count | n/a | $(\phi r)^0$ | n/a | n/a | n/a |
-| 1D | $2r$ | n/a | $(\phi r)^1$ | n/a | n/a | n/a |
+| 0D | $x_{\pi,0} r^0 $ | $\phi^0 = 1$| $(\phi r)^0$ | n/a | n/a | n/a |
+| 1D | $2x_{\pi,1}r$ | $\phi/2$ | $(\phi r)^1$ | {(() => Math.abs(Math.PHI / 2 - Math.PI).toFixed(18))()} | n/a | n/a |
 | 2D | $x_{\pi,2}r^2$ | $\phi^2$ | $(\phi r)^2$ | {(() => Math.abs(Math.PHI ** 2 - Math.PI).toFixed(18))()} | $\phi^2/5$ | {(() => Math.abs(Math.abs(Math.PHI ** 2 - Math.PI) - (Math.PHI ** 2) / 5).toFixed(18))()} |
-| 3D | $\frac{4}{3}x_{\pi,3}r^3$ | $3\phi^3/4$ | $(\phi r)^3$ | {(() => Math.abs((3 * Math.PHI ** 3) / 4 - Math.PI).toFixed(18))()} | $\phi^-7$ | {(() => Math.abs(Math.abs((3 * Math.PHI ** 3) / 4 - Math.PI) - Math.PHI ** -7).toFixed(18))()} |
+| 3D | $\frac{4}{3}x_{\pi,3}r^3$ | $3\phi^3/4$ | $(\phi r)^3$ | {(() => Math.abs((3 * Math.PHI ** 3) / 4 - Math.PI).toFixed(18))()} | $\phi^7$ | {(() => Math.abs(Math.abs((3 * Math.PHI ** 3) / 4 - Math.PI) - Math.PHI ** 7).toFixed(18))()} |
 | 4D | $\frac{x_{\pi,4}^2}{2}r^4$ | $\phi^2\sqrt{2}$ | $(\phi r)^4$ | {(() => Math.abs(Math.PHI ** 2 * Math.sqrt(2) - Math.PI).toFixed(18))()} | $\phi^2/5$ | {(() => Math.abs(Math.abs(Math.PHI ** 2 * Math.sqrt(2) - Math.PI) - (Math.PHI ** 2) / 5).toFixed(18))()} |
 | 5D | $\frac{8x_{\pi,5}^2}{15}r^5$ | $\sqrt{15\phi^5/8}$ | $(\phi r)^5$ | {(() => Math.abs(Math.sqrt((15 * Math.PHI ** 5) / 8) - Math.PI).toFixed(18))()} | $\sqrt{2}$ | {(() => Math.abs(Math.abs(Math.sqrt((15 * Math.PHI ** 5) / 8) - Math.PI) - Math.sqrt(2)).toFixed(18))()} |
 | 6D | $\frac{x_{\pi,6}^3}{6}r^6$ | $6^{1/3}\phi^2$ | $(\phi r)^6$ | {(() => Math.abs(6 ** (1 / 3) * Math.PHI ** 2 - Math.PI).toFixed(18))()} | $\phi$ | {(() => Math.abs(Math.abs(6 ** (1 / 3) * Math.PHI ** 2 - Math.PI) - Math.PHI).toFixed(18))()} |
@@ -192,24 +192,19 @@ remember we were reasoning about the ratio of volume of the sphere and the volum
 
 $$ \odot = \frac{V_{sphere}}{V_{cube}} $$
 
-$$y_{\odot,3}=\frac{\phi^3}{8}\approx\frac{\pi}{6}$$
-{(() => (Math.PHI**3/8).toFixed(18))()} diff $\left|\phi^3/8-\pi/6\right|\approx$ {(() => Math.abs(Math.PHI**3/8 - Math.PI/6).toFixed(18))()}
+| Dim | $V_{n\text{-sphere}}$ ($r=1/\phi$) | $V_{n\text{-box}}$ ($l=2r=2/\phi$) | $\phi$-based $y_{\odot,n}$ | $\pi$-based reference | numeric $y_{\odot,n}$ | abs diff |
+|---|---|---|---|---|---:|---:|
+| 0D | $1$ | $1$ | $1$ | $1$ | {(() => (1).toFixed(18))()} | {(() => (0).toFixed(18))()} |
+| 1D | $2/\phi$ | $2/\phi$ | $\phi/2$ | $1$ | {(() => (Math.PHI / 2).toFixed(18))()} | {(() => Math.abs(Math.PHI / 2 - 1).toFixed(18))()} |
+| 2D | $\pi/\phi^2$ | $4/\phi^2$ | $\phi^2/4$ | $\pi/4$ | {(() => (Math.PHI ** 2 / 4).toFixed(18))()} | {(() => Math.abs(Math.PHI ** 2 / 4 - Math.PI / 4).toFixed(18))()} |
+| 3D | $\frac{4\pi}{3\phi^3}$ | $8/\phi^3$ | $\phi^3/8$ | $\pi/6$ | {(() => (Math.PHI ** 3 / 8).toFixed(18))()} | {(() => Math.abs(Math.PHI ** 3 / 8 - Math.PI / 6).toFixed(18))()} |
+| 4D | $\frac{\pi^2}{2\phi^4}$ | $16/\phi^4$ | $\phi^4/16$ | $\pi^2/32$ | {(() => (Math.PHI ** 4 / 16).toFixed(18))()} | {(() => Math.abs(Math.PHI ** 4 / 16 - Math.PI ** 2 / 32).toFixed(18))()} |
+| 5D | $\frac{8\pi^2}{15\phi^5}$ | $32/\phi^5$ | $\phi^5/32$ | $\pi^2/60$ | {(() => (Math.PHI ** 5 / 32).toFixed(18))()} | {(() => Math.abs(Math.PHI ** 5 / 32 - Math.PI ** 2 / 60).toFixed(18))()} |
+| 6D | $\frac{\pi^3}{6\phi^6}$ | $64/\phi^6$ | $\phi^6/64$ | $\pi^3/384$ | {(() => (Math.PHI ** 6 / 64).toFixed(18))()} | {(() => Math.abs(Math.PHI ** 6 / 64 - Math.PI ** 3 / 384).toFixed(18))()} |
+| 7D | $\frac{16\pi^3}{105\phi^7}$ | $128/\phi^7$ | $\phi^7/128$ | $\pi^3/840$ | {(() => (Math.PHI ** 7 / 128).toFixed(18))()} | {(() => Math.abs(Math.PHI ** 7 / 128 - Math.PI ** 3 / 840).toFixed(18))()} |
+| 8D | $\frac{\pi^4}{24\phi^8}$ | $256/\phi^8$ | $\phi^8/256$ | $\pi^4/6144$ | {(() => (Math.PHI ** 8 / 256).toFixed(18))()} | {(() => Math.abs(Math.PHI ** 8 / 256 - Math.PI ** 4 / 6144).toFixed(18))()} |
 
-$$y_{\odot,4}=\frac{\phi^4}{16}\approx\frac{\pi^2}{32}$$
-{(() => (Math.PHI**4/16).toFixed(18))()} diff $\left|\phi^4/16-\pi^2/32\right|\approx$ {(() => Math.abs(Math.PHI**4/16 - Math.PI**2/32).toFixed(18))()}
-
-$$y_{\odot,5}=\frac{\phi^5}{32}\approx\frac{\pi^2}{60}$$
-{(() => (Math.PHI**5/32).toFixed(18))()} diff $\left|\phi^5/32-\pi^2/60\right|\approx$ {(() => Math.abs(Math.PHI**5/32 - Math.PI**2/60).toFixed(18))()}
-
-$$y_{\odot,6}=\frac{\phi^6}{64}\approx\frac{\pi^3}{384}$$
-{(() => (Math.PHI**6/64).toFixed(18))()} diff $\left|\phi^6/64-\pi^3/384\right|\approx$ {(() => Math.abs(Math.PHI**6/64 - Math.PI**3/384).toFixed(18))()}
-
-$$y_{\odot,7}=\frac{\phi^7}{128}\approx\frac{\pi^3}{840}$$
-{(() => (Math.PHI**7/128).toFixed(18))()} diff $\left|\phi^7/128-\pi^3/840\right|\approx$ {(() => Math.abs(Math.PHI**7/128 - Math.PI**3/840).toFixed(18))()}
-
-$$y_{\odot,8}=\frac{\phi^8}{256}\approx\frac{\pi^4}{6144}$$
-{(() => (Math.PHI**8/256).toFixed(18))()} diff $\left|\phi^8/256-\pi^4/6144\right|\approx$ {(() => Math.abs(Math.PHI**8/256 - Math.PI**4/6144).toFixed(18))()}
-
+*Todo:* look at all the dimensions up to 28, or rather each of the perfect numbers, look at bott periodicity
 
 Now the revelation becomes quite translucent, we have our horus eye fractions cutting powers of the golden ratio, formally we derive
 
@@ -220,3 +215,66 @@ which cements the theory that it was a multidimensional interrelator beyond just
 
 ![All dressed](/img/all-dressed.png)
 Source pyramid k 2019
+
+
+## Inferring the analytic continuation, a note on the 0d and 1d situation
+
+let us consider the polar coordinate derivation of the area of a circle
+
+$$
+\begin{aligned}
+A(r)
+&= \iint_D 1\,d(x,y) \\
+&= \iint_D t\,dt\,d\theta \\
+&= \int_0^r \int_0^{2\pi} t\,d\theta\,dt \\
+&= \int_0^r \left[t\theta\right]_0^{2\pi} dt \\
+&= \int_0^r 2\pi t\,dt \\
+&= \pi r^2.
+\end{aligned}
+$$
+
+let us take a position that it is easier to rotate on a non dimensional point, than it is to traverse a non dimension.
+
+so our 1-d case can strip integration in $dt$ leaving just integration on the angle, from this perspective we can reason this is volume measurement for a 1d circle. Astutely paradoxical yes, 
+
+$$
+\begin{aligned}
+C(r)
+&= \int_0^{2\pi} r\,d\theta \\
+&= r\left[\theta\right]_0^{2\pi} \\
+&= 2\pi r.
+\end{aligned}
+$$
+
+if we were in doubt let consider an alternative notion, that we should strip out rotation and just keep the divergent axis.
+
+$$
+\begin{aligned}
+R(r)
+&= \int_0^r t\,dt \\
+&= \left[\frac{t^2}{2}\right]_0^r \\
+&= \frac{r^2}{2}.
+\end{aligned}
+$$
+
+
+
+moving anywhere from here is paradoxical, we dont have a pi value to vary over in R(r).
+
+
+
+ however we can still ideate the case of C(r) = 1 when r = 1/phi
+
+Let $\pi$ float in this case as $x_{\pi,1}$:
+
+$$C(r)=2x_{\pi,1}r.$$
+
+Set $C(r)=1$ and $r=\frac{1}{\phi}$:
+
+$$1=2x_{\pi,1}\frac{1}{\phi}\;\Rightarrow\;x_{\pi,1}=\frac{\phi}{2}.$$
+
+Numerically, $x_{\pi,1}\approx$ {(() => (Math.PHI / 2).toFixed(18))()} and abs$(x_{\pi,1}-\pi)\approx$ {(() =>
+  Math.abs(Math.PHI / 2 - Math.PI).toFixed(18)
+)()}.
+
+I find this result rather appealing, this idea we can only continue down the n-gon trail by attempting to rotate over a 1d point (there is no 2d to rotate into), and not being able to continue attempting to extend out of a rotation.  We should remember this as nature totally cool with the idea of you spinning in 1d but not okay with you ending your spin on a different axis you were ever on. spin does not admin the necessisity of perfect extension or compenetration
