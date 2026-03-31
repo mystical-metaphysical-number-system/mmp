@@ -114,6 +114,26 @@ This is very close to $\frac{\phi^2}{5}\cdot\frac{1}{10} = \frac{\phi^2}{50} \ap
 )()}.
 Note the odd recursive flavor in this error term: at higher precision, the residual appears to "tunnel" down through powers of 10 with the cubitic relation, this becomes more stark later
 
+$$ V_{4-box} = (2r)^4 $$
+
+$$\frac{V_{4\text{-sphere}}}{V_{4\text{-box}}}=\frac{\frac{\pi^2}{2}r^4}{2^4r^4}$$
+$$=\frac{\pi^2}{2^5}=\frac{\pi^2}{32}$$
+
+let us aproach the formula blindly again, without a knowledge of pi,  but from a reasoning about the relationship between the 4-sphere and the 4-volume.
+
+$$\odot_4 = \frac{\pi^2}{2}$$
+
+and if we commit to approximate pi with phi
+
+$$ \odot_4 = \frac{\frac{6 \phi^2}{5}^2}{2} $$
+
+So in powers of $\phi$ only:
+
+$$\odot_4 = \frac{18}{25}\phi^4.$$
+
+Numerically, $\odot_4 \approx$ {(() => ((((6 * Math.PHI ** 2) / 5) ** 2) / 2).toFixed(6))()} and $\left|\frac{\pi^2}{2} - \odot_4\right| \approx$ {(() =>
+  Math.abs((Math.PI ** 2) / 2 - (((6 * Math.PHI ** 2) / 5) ** 2) / 2).toFixed(6)
+)()}.
 
 let us reaffirm the 5 dimension case for veracity
 
@@ -199,9 +219,6 @@ Numerically, $x_{\pi,5}\approx$ {(() => Math.sqrt((15 * Math.PHI ** 5) / 8).toFi
   Math.abs(Math.sqrt((15 * Math.PHI ** 5) / 8) - Math.PI).toFixed(18)
 )()}.
 
-In every dimension the prefactor constants are precisely the inverse of the volume-formula coefficient — $\frac{4}{3}\leftrightarrow\frac{3}{4}$, $\frac{1}{2}\leftrightarrow 2$, $\frac{8}{15}\leftrightarrow\frac{15}{8}$ — so they annihilate, and the whole tower collapses to the single statement
-
-$$1=(\phi r)^n.$$
 
 **6D** — $V=\frac{x_{\pi,6}^3}{6}r^6$, $x_{\pi,6}^3=6\phi^6$ (note $\frac{6}{6}=1$):
 $$V=\frac{6\phi^6}{6}r^6=\phi^6 r^6\;\Rightarrow\; 1=(\phi r)^6\checkmark \quad x_{\pi,6}=6^{1/3}\phi^2$$
@@ -224,73 +241,39 @@ Numerically, $x_{\pi,8}\approx$ {(() => (24 ** (1/4) * Math.PHI ** 2).toFixed(18
   Math.abs(24 ** (1/4) * Math.PHI ** 2 - Math.PI).toFixed(18)
 )()}.
 
-afdsfadslfksafadlkfjfkljdsakldsjfsjklf = ==========================
+In every dimension the prefactor constants are precisely the inverse of the volume-formula coefficient — $\frac{4}{3}\leftrightarrow\frac{3}{4}$, $\frac{1}{2}\leftrightarrow 2$, $\frac{8}{15}\leftrightarrow\frac{15}{8}$ — so they annihilate, and the whole tower collapses to the single statement
+
+$$1=(\phi r)^n.$$
 
 
-$$ V_{4-box} = (2r)^4 $$
+Now, remembering that the cubit is hypothesized as a dimension climbing device, so now we have strange values of pi that correspond to each dimension, that 'warp' the field to make th mathematical coincidence mathematical fact- its this extreme and mean proportion abuse that makes it a n+1th dimension commensurability resolver
 
-$$\frac{V_{4\text{-sphere}}}{V_{4\text{-box}}}=\frac{\frac{\pi^2}{2}r^4}{2^4r^4}$$
-$$=\frac{\pi^2}{2^5}=\frac{\pi^2}{32}$$
+remember we were reasoning about the ratio of volume of the sphere and the volume of the box, let us now use our unique values of pi corresponding to each dimension and see $ y_{\odot,n} $
 
+$$y_{\odot,3}=\frac{\phi^3}{8}\approx\frac{\pi}{6}$$
+{(() => (Math.PHI**3/8).toFixed(18))()} diff $\left|\phi^3/8-\pi/6\right|\approx$ {(() => Math.abs(Math.PHI**3/8 - Math.PI/6).toFixed(18))()}
 
+$$y_{\odot,4}=\frac{\phi^4}{16}\approx\frac{\pi^2}{32}$$
+{(() => (Math.PHI**4/16).toFixed(18))()} diff $\left|\phi^4/16-\pi^2/32\right|\approx$ {(() => Math.abs(Math.PHI**4/16 - Math.PI**2/32).toFixed(18))()}
 
+$$y_{\odot,5}=\frac{\phi^5}{32}\approx\frac{\pi^2}{60}$$
+{(() => (Math.PHI**5/32).toFixed(18))()} diff $\left|\phi^5/32-\pi^2/60\right|\approx$ {(() => Math.abs(Math.PHI**5/32 - Math.PI**2/60).toFixed(18))()}
 
+$$y_{\odot,6}=\frac{\phi^6}{64}\approx\frac{\pi^3}{384}$$
+{(() => (Math.PHI**6/64).toFixed(18))()} diff $\left|\phi^6/64-\pi^3/384\right|\approx$ {(() => Math.abs(Math.PHI**6/64 - Math.PI**3/384).toFixed(18))()}
 
+$$y_{\odot,7}=\frac{\phi^7}{128}\approx\frac{\pi^3}{840}$$
+{(() => (Math.PHI**7/128).toFixed(18))()} diff $\left|\phi^7/128-\pi^3/840\right|\approx$ {(() => Math.abs(Math.PHI**7/128 - Math.PI**3/840).toFixed(18))()}
 
-
-let us aproach the formula blindly again, without a knowledge of pi,  but from a reasoning about the relationship between the 4-sphere and the 4-volume.
-
-$$\odot_4 = \frac{\pi^2}{2}$$
-
-and if we commit to approximate pi with phi
-
-$$ \odot_4 = \frac{\frac{6 \phi^2}{5}^2}{2} $$
-
-So in powers of $\phi$ only:
-
-$$\odot_4 = \frac{18}{25}\phi^4.$$
-
-Numerically, $\odot_4 \approx$ {(() => ((((6 * Math.PHI ** 2) / 5) ** 2) / 2).toFixed(6))()} and $\left|\frac{\pi^2}{2} - \odot_4\right| \approx$ {(() =>
-  Math.abs((Math.PI ** 2) / 2 - (((6 * Math.PHI ** 2) / 5) ** 2) / 2).toFixed(6)
-)()}.
+$$y_{\odot,8}=\frac{\phi^8}{256}\approx\frac{\pi^4}{6144}$$
+{(() => (Math.PHI**8/256).toFixed(18))()} diff $\left|\phi^8/256-\pi^4/6144\right|\approx$ {(() => Math.abs(Math.PHI**8/256 - Math.PI**4/6144).toFixed(18))()}
 
 
-
-
-
-
-
-
-
-
-$$ V_{unit-n-sphere} = 1 \approx \phi^n r^n $$
-
-this beauty alone motivates the perspective that the royal cubit wasn't some constant that united just the 2d and 3d, but a general perscription
-
-given the royal cubits use as a volumetric relation, the ratio between the volume of the sphere, and the volume of the box that encloses that sphere, and that
-
-$$ V_{unit-n-box} = 1 = r^n $$
-
-for example, in 4 dimensions
-
-$$ V_{4-sphere} = \frac{\pi^2}{2}r^4$$
-
-what is the imp
-
-we derive
+Now the revelation becomes quite translucent, we have our horus eye fractions cutting powers of the golden ratio, formally we derive
 
 $$\odot = \frac{V_{\text{unit-}n\text{-sphere}}}{V_{\text{unit-}n\text{-box}}} = \frac{\sum_{n=0}^{\infty} \frac{\phi^n}{2^n}}{10} = \frac{\phi^2}{5} \approx \frac{\pi}{6} $$
 
-which cements the theory that it was a multidimensional interrelator beyond just the 2d and 3d with all the fixings of the egyptian mathematical system, the horus powers of two, the golden mean, pi, and a power of 10. phi pi cubit and the metre all in one
-
-
+which cements the theory that it was a multidimensional interrelator beyond just the 2d and 3d with all the fixings of the egyptian mathematical system, the horus powers of two, the golden mean, pi, and powers of 10. phi pi cubit and the metre all in one. and shows how this process loops back into itself with commensurate perfection suggesting nature uses phi not pi.
 
 ![All dressed](/img/all-dressed.png)
 Source pyramid k 2019
-
-
-
-## Test B Approximations of horus eye fractsion
-
-sum 0..6
-sum 0..3
