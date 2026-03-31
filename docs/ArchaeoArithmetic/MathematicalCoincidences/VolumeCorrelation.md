@@ -155,8 +155,76 @@ The difference $\left|r-\frac{1}{\phi}\right| \approx$ {(() =>
 )()}.
 
 
+again we find this mathematical coincidence. starting from dimension 2 here and climbing back up, lets consider that nature or some reason avoids pi, and prefers 'balancing' pressure disintermediation of either the area under the N+1 curve with 1/phi the Nth dimension- a sort of holographic information encoding resolving the incommensurability of the vector rotation.
 
+Here lets avoid setting pi as constant, but prod the number when setting this mathematical coincidence as mathematical fact.  Like nature saves information by encoding holographically and lets pi float and be an estimator at runtime
 
+$$A = x_{\pi,2}\, r^2$$
+
+Setting $A=1$ and $r=\frac{1}{\phi}$ and solving for $x_{\pi,2}$ we denote this subscript as x is a substitute for the 'real' (chuckle) pi when considering the 2nd dimension:
+
+$$1 = x_{\pi,2} \cdot \frac{1}{\phi^2} \;\Rightarrow\; x_{\pi,2} = \phi^2. = \phi^2 r^2$$
+
+Numerically, $x_{\pi,2} = \phi^2 \approx$ {(() => (Math.PHI ** 2).toFixed(18))()} and $\left|x_{\pi,2} - \pi\right| \approx$ {(() =>
+  Math.abs(Math.PHI ** 2 - Math.PI).toFixed(18)
+)()}.
+
+<DocImg src="/img/that-difference.png" />
+
+noting again this strange nesting of the residual error into powers of 10 of the cubit itself
+
+The key observation is that in every case $x_{\pi,n}$ is the unique value that makes the prefactor constants cancel, collapsing the volume formula to $1=(\phi r)^n$:
+
+**2D** — $A=x_{\pi,2}r^2$, $x_{\pi,2}=\phi^2$:
+$$A=\phi^2 r^2\;\Rightarrow\; 1=(\phi r)^2\checkmark$$
+
+**3D** — $V=\frac{4}{3}x_{\pi,3}r^3$, $x_{\pi,3}=\frac{3\phi^3}{4}$ (note $\frac{4}{3}\cdot\frac{3}{4}=1$):
+$$V=\frac{4}{3}\cdot\frac{3\phi^3}{4}r^3=\phi^3 r^3\;\Rightarrow\; 1=(\phi r)^3\checkmark$$
+
+Numerically, $x_{\pi,3}\approx$ {(() => ((3 * Math.PHI ** 3) / 4).toFixed(18))()} and $\left|x_{\pi,3}-\pi\right|\approx$ {(() =>
+  Math.abs((3 * Math.PHI ** 3) / 4 - Math.PI).toFixed(18)
+)()}.
+
+**4D** — $V=\frac{x_{\pi,4}^2}{2}r^4$, $x_{\pi,4}=\phi^2\sqrt{2}$ (note $\frac{(\phi^2\sqrt{2})^2}{2}=\frac{2\phi^4}{2}=\phi^4$):
+$$V=\frac{x_{\pi,4}^2}{2}r^4=\phi^4 r^4\;\Rightarrow\; 1=(\phi r)^4\checkmark$$
+
+Numerically, $x_{\pi,4}\approx$ {(() => (Math.PHI ** 2 * Math.sqrt(2)).toFixed(18))()} and $\left|x_{\pi,4}-\pi\right|\approx$ {(() =>
+  Math.abs(Math.PHI ** 2 * Math.sqrt(2) - Math.PI).toFixed(18)
+)()}.
+
+**5D** — $V=\frac{8x_{\pi,5}^2}{15}r^5$, $x_{\pi,5}=\sqrt{\frac{15\phi^5}{8}}$ (note $\frac{8}{15}\cdot\frac{15\phi^5}{8}=\phi^5$):
+$$V=\frac{8x_{\pi,5}^2}{15}r^5=\phi^5 r^5\;\Rightarrow\; 1=(\phi r)^5\checkmark$$
+
+Numerically, $x_{\pi,5}\approx$ {(() => Math.sqrt((15 * Math.PHI ** 5) / 8).toFixed(18))()} and $\left|x_{\pi,5}-\pi\right|\approx$ {(() =>
+  Math.abs(Math.sqrt((15 * Math.PHI ** 5) / 8) - Math.PI).toFixed(18)
+)()}.
+
+In every dimension the prefactor constants are precisely the inverse of the volume-formula coefficient — $\frac{4}{3}\leftrightarrow\frac{3}{4}$, $\frac{1}{2}\leftrightarrow 2$, $\frac{8}{15}\leftrightarrow\frac{15}{8}$ — so they annihilate, and the whole tower collapses to the single statement
+
+$$1=(\phi r)^n.$$
+
+**6D** — $V=\frac{x_{\pi,6}^3}{6}r^6$, $x_{\pi,6}^3=6\phi^6$ (note $\frac{6}{6}=1$):
+$$V=\frac{6\phi^6}{6}r^6=\phi^6 r^6\;\Rightarrow\; 1=(\phi r)^6\checkmark \quad x_{\pi,6}=6^{1/3}\phi^2$$
+
+Numerically, $x_{\pi,6}\approx$ {(() => (6 ** (1/3) * Math.PHI ** 2).toFixed(18))()} and $\left|x_{\pi,6}-\pi\right|\approx$ {(() =>
+  Math.abs(6 ** (1/3) * Math.PHI ** 2 - Math.PI).toFixed(18)
+)()}.
+
+**7D** — $V=\frac{16x_{\pi,7}^3}{105}r^7$, $x_{\pi,7}^3=\frac{105\phi^7}{16}$ (note $\frac{16}{105}\cdot\frac{105}{16}=1$):
+$$V=\phi^7 r^7\;\Rightarrow\; 1=(\phi r)^7\checkmark \quad x_{\pi,7}=\left(\frac{105\phi^7}{16}\right)^{1/3}$$
+
+Numerically, $x_{\pi,7}\approx$ {(() => ((105 * Math.PHI ** 7) / 16) ** (1/3).toFixed(18))()} and $\left|x_{\pi,7}-\pi\right|\approx$ {(() =>
+  Math.abs(((105 * Math.PHI ** 7) / 16) ** (1/3) - Math.PI).toFixed(18)
+)()}.
+
+**8D** — $V=\frac{x_{\pi,8}^4}{24}r^8$, $x_{\pi,8}^4=24\phi^8$ (note $\frac{24}{24}=1$):
+$$V=\phi^8 r^8\;\Rightarrow\; 1=(\phi r)^8\checkmark \quad x_{\pi,8}=24^{1/4}\phi^2$$
+
+Numerically, $x_{\pi,8}\approx$ {(() => (24 ** (1/4) * Math.PHI ** 2).toFixed(18))()} and $\left|x_{\pi,8}-\pi\right|\approx$ {(() =>
+  Math.abs(24 ** (1/4) * Math.PHI ** 2 - Math.PI).toFixed(18)
+)()}.
+
+afdsfadslfksafadlkfjfkljdsakldsjfsjklf = ==========================
 
 
 $$ V_{4-box} = (2r)^4 $$
