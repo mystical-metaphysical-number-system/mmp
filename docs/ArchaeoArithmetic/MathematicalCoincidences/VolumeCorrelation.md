@@ -171,10 +171,10 @@ one may find this patter rather strange, this fuzzy correlative to the hundreths
 
 | Dim | n-volume | Solved $x_{\pi,n}$ | $\phi$ form | abs$(x_{\pi,n}-\pi)$ | target $t_n$ | abs$(\text{abs}(x_{\pi,n}-\pi)-t_n)$ |
 |---|---|---|---|---:|---|---:|
-| 0D | $x_{\pi,0} r^0 $ | $\phi^0 = 1$| $(\phi r)^0$ | n/a | n/a | n/a |
-| 1D | $2x_{\pi,1}r$ | $\phi/2$ | $(\phi r)^1$ | {(() => Math.abs(Math.PHI / 2 - Math.PI).toFixed(18))()} | n/a | n/a |
+| 0D | $x_{\pi,0} r^0$ | $\phi^0=1$ | $(\phi r)^0$ | {(() => Math.abs(1 - Math.PI).toFixed(18))()} | $\phi^{3/2}$ | {(() => Math.abs(Math.abs(1 - Math.PI) - Math.PHI ** (3 / 2)).toFixed(18))()} |
+| 1D | $2x_{\pi,1}r$ | $\phi/2$ | $(\phi r)^1$ | {(() => Math.abs(Math.PHI / 2 - Math.PI).toFixed(18))()} | $\phi^{7/4}$ | {(() => Math.abs(Math.abs(Math.PHI / 2 - Math.PI) - Math.PHI ** (7 / 4)).toFixed(18))()} |
 | 2D | $x_{\pi,2}r^2$ | $\phi^2$ | $(\phi r)^2$ | {(() => Math.abs(Math.PHI ** 2 - Math.PI).toFixed(18))()} | $\phi^2/5$ | {(() => Math.abs(Math.abs(Math.PHI ** 2 - Math.PI) - (Math.PHI ** 2) / 5).toFixed(18))()} |
-| 3D | $\frac{4}{3}x_{\pi,3}r^3$ | $3\phi^3/4$ | $(\phi r)^3$ | {(() => Math.abs((3 * Math.PHI ** 3) / 4 - Math.PI).toFixed(18))()} | $\phi^7$ | {(() => Math.abs(Math.abs((3 * Math.PHI ** 3) / 4 - Math.PI) - Math.PHI ** 7).toFixed(18))()} |
+| 3D | $\frac{4}{3}x_{\pi,3}r^3$ | $3\phi^3/4$ | $(\phi r)^3$ | {(() => Math.abs((3 * Math.PHI ** 3) / 4 - Math.PI).toFixed(18))()} | $\phi^{-7}$ | {(() => Math.abs(Math.abs((3 * Math.PHI ** 3) / 4 - Math.PI) - Math.PHI ** -7).toFixed(18))()} |
 | 4D | $\frac{x_{\pi,4}^2}{2}r^4$ | $\phi^2\sqrt{2}$ | $(\phi r)^4$ | {(() => Math.abs(Math.PHI ** 2 * Math.sqrt(2) - Math.PI).toFixed(18))()} | $\phi^2/5$ | {(() => Math.abs(Math.abs(Math.PHI ** 2 * Math.sqrt(2) - Math.PI) - (Math.PHI ** 2) / 5).toFixed(18))()} |
 | 5D | $\frac{8x_{\pi,5}^2}{15}r^5$ | $\sqrt{15\phi^5/8}$ | $(\phi r)^5$ | {(() => Math.abs(Math.sqrt((15 * Math.PHI ** 5) / 8) - Math.PI).toFixed(18))()} | $\sqrt{2}$ | {(() => Math.abs(Math.abs(Math.sqrt((15 * Math.PHI ** 5) / 8) - Math.PI) - Math.sqrt(2)).toFixed(18))()} |
 | 6D | $\frac{x_{\pi,6}^3}{6}r^6$ | $6^{1/3}\phi^2$ | $(\phi r)^6$ | {(() => Math.abs(6 ** (1 / 3) * Math.PHI ** 2 - Math.PI).toFixed(18))()} | $\phi$ | {(() => Math.abs(Math.abs(6 ** (1 / 3) * Math.PHI ** 2 - Math.PI) - Math.PHI).toFixed(18))()} |
