@@ -24,8 +24,6 @@ The difference $\lvert r - 1/\phi\rvert$ is $\approx$ {(() => {
   return Math.abs(r - 1 / Math.PHI).toFixed(12);
 })()}.
 
-Additionally we find its diameter
-
 While one may keen to cast this aside, when possessed of the mystery of the royal cubit and the mathematical relationship that
 
 $$\pi/6 \approx \phi^2/5$$
@@ -37,14 +35,14 @@ Numerically, $\pi/6 \approx$ {(() => (Math.PI / 6).toFixed(6))()} and $\phi^2/5 
 <DocImg src="/img/cubit-mystery.jpg" style={{maxWidth: '100%'}} />
 
 *Source* [Geometry of Time via the Metre, Egyptian Royal Cubit & the Great Pyramid](https://www.youtube.com/watch?v=f_UHNpQLmYM)
+
 *Source* [The Movie Great Pyramid K 2019 - Director Fehmi Krasniqi](https://www.youtube.com/watch?v=KMAtkjy_YK4)
 
+one may be possessed themselves to explore this coincidence with more care and frugality
 
 If one were to approach the volume of forms without the modern trigonometry that relies on the arc length of the circle, such as the babylonians in plimpton 322 with their focus on exact ratios of right angle triangles instead of angles and sohcahtoa.
 
-
 <DocVideo src="/img/322-descent.webm" />
-
 [Plimpton 322 is Babylonian exact sexagesimal trigonometry](https://www.sciencedirect.com/science/article/pii/S0315086017300691)
 
 
@@ -52,7 +50,7 @@ If one were to approach the volume of forms without the modern trigonometry that
 A modern trigonometric table is a list of right triangles with hypotenuse 1 and approximations to the side lengths sin θ and cos θ, along with the ratio tan θ = sin θ/ cos θ. We propose that P322 is a different kind of trigonometric table which lists right triangles with long side 1, exact short side β and exact diagonal δ – in place of the approximations sin θ and cos θ. The ratios β/δ or δ/β (equivalent to tan θ) are not given because they cannot be calculated exactly on account of the divisions involved. Instead P322 separates this information into three exact numbers: a related squared ratio which can be used as an index, and simplified values b and d for β and δ which allow the user to make their own approximation to these ratios.
 :::
 
-This makes this coincidence quite interesting, as this makes their volume relations not correspond with arc's or angles, defeating the justification to put $\pi$ in the volume of sphere. [Deriving the volume of a sphere](https://tutorial.math.lamar.edu/classes/calciii/tisphericalcoords.aspx) If pi was not such an easy commance in the ancient world, than it begs to question how they reasoned and calculated the volume of forms.  It would've made a fatally obscure "error" to attempt to fill a cube with water with known length, and than see how much water is left or missing when pouring it into a sphere of known diameter- they could've easily assumed at this level of tolerance that there was a fundemental extreme and mean identity between the cube and sphere as is the line AB divided at point C is extreme and mean ratio if  AC = AC:CB.  But no matter of their persuasions, it begs the question, if pi was the mystery number and they derived the volumes by hand with water buckets, what would've they put in place for pi?
+This makes this coincidence quite interesting, as this makes their volume relations not correspond with arc's or angles, defeating the justification to put $\pi$ in the volume of sphere. [Deriving the volume of a sphere](https://tutorial.math.lamar.edu/classes/calciii/tisphericalcoords.aspx) If pi was not such an easy commance in the ancient world, than it begs to question how they reasoned and calculated the volume of forms.  It would've made a fatally obscure "error" to attempt to fill a cube with water with known length, and than see how much water is left or missing when pouring it into a sphere of known diameter- they could've easily assumed at this level of tolerance that there was a fundemental extreme and mean identity between the cube and sphere as is the line AB divided at point C is extreme and mean ratio if  AC = AC:CB.  But no matter of their persuasions- if they were interdimensional geniuses or enchanted by a mathematical rounding error- it begs the question, if pi was the mystery number and they derived the volumes by hand with water buckets, what would've they put in place for pi?
 
 
 $$\frac{\left(\frac{3}{x}\right)^{1/3}}{2^{2/3}} = \frac{1}{\phi}$$
@@ -77,9 +75,7 @@ $$ V_{box} = \frac{2}{\phi}^3 = \frac{8}{\phi^3}$$
 
 making the ratio of the 3 sphere to the 3 box
 
-$$ V_{sphere} \over V_{box} = \frac{\phi^3}{8} = \frac{\phi^3}{2^3} $$
-
-to find a pattern amongst the nth dimension we prod the 2 dimensional case in light of these revelations
+$$ \frac{V_{sphere}}{V_{box}} = \frac{\phi^3}{8} = \frac{\phi^3}{2^3} $$
 
 if we were consider a sort of strange mathematical universe that neglects $\pi$ as a natural constant, that universe is not obligated to obey pi, but is destined to disintemediate pressure somewhat uniformly about its degrees of freedom ie its dimensional axies.
 
@@ -95,69 +91,7 @@ A pleasing notion that the incommensurability brought forth in the is pi method 
 
 the experiment in the least and be confirmed below in the second dimension and again in the 4th
 
-
-
-
-$$ V_{4-sphere} = \frac{\pi^2}{2}r^4 $$
-
-
-For a unit 4-volume, set $V_{4\text{-sphere}}=1$:
-
-$$1=\frac{\pi^2}{2}r^4 \;\Rightarrow\; r=\left(\frac{2}{\pi^2}\right)^{1/4}.$$
-
-Numerically, $r \approx$ {(() => ((2 / (Math.PI ** 2)) ** 0.25).toFixed(18))()}.
-The difference $\left|r-\frac{1}{\phi}\right| \approx$ {(() =>
-  Math.abs((2 / (Math.PI ** 2)) ** 0.25 - 1 / Math.PHI).toFixed(18)
-)()}.
-This is very close to $\frac{\phi^2}{5}\cdot\frac{1}{10} = \frac{\phi^2}{50} \approx$ {(() => ((Math.PHI ** 2) / 50).toFixed(18))()}, with absolute difference $\approx$ {(() =>
-  Math.abs(Math.abs((2 / (Math.PI ** 2)) ** 0.25 - 1 / Math.PHI) - (Math.PHI ** 2) / 50).toFixed(18)
-)()}.
-Note the odd recursive flavor in this error term: at higher precision, the residual appears to "tunnel" down through powers of 10 with the cubitic relation, this becomes more stark later
-
-$$ V_{4-box} = (2r)^4 $$
-
-$$\frac{V_{4\text{-sphere}}}{V_{4\text{-box}}}=\frac{\frac{\pi^2}{2}r^4}{2^4r^4}$$
-$$=\frac{\pi^2}{2^5}=\frac{\pi^2}{32}$$
-
-let us aproach the formula blindly again, without a knowledge of pi,  but from a reasoning about the relationship between the 4-sphere and the 4-volume.
-
-$$\odot_4 = \frac{\pi^2}{2}$$
-
-and if we commit to approximate pi with phi
-
-$$ \odot_4 = \frac{\frac{6 \phi^2}{5}^2}{2} $$
-
-So in powers of $\phi$ only:
-
-$$\odot_4 = \frac{18}{25}\phi^4.$$
-
-Numerically, $\odot_4 \approx$ {(() => ((((6 * Math.PHI ** 2) / 5) ** 2) / 2).toFixed(6))()} and $\left|\frac{\pi^2}{2} - \odot_4\right| \approx$ {(() =>
-  Math.abs((Math.PI ** 2) / 2 - (((6 * Math.PHI ** 2) / 5) ** 2) / 2).toFixed(6)
-)()}.
-
-let us reaffirm the 5 dimension case for veracity
-
-the volume and radius of a 5 sphere are
-
-$$V_{5\text{-sphere}}=\frac{8\pi^2}{15}r^5$$
-
-$$r=\left(\frac{15V}{8\pi^2}\right)^{1/5}$$
-
-For unit volume $(V=1)$:
-
-$$r=\left(\frac{15}{8\pi^2}\right)^{1/5}.$$
-
-Numerically, $r \approx$ {(() => ((15 / (8 * Math.PI ** 2)) ** (1 / 5)).toFixed(18))()}.
-
-While we are slightly departed we still are on target well with the difference of this with the little golden ratio as 
-
-$$\left|r-\frac{1}{\phi}\right|=\left|\left(\frac{15}{8\pi^2}\right)^{1/5}-\frac{1}{\phi}\right|.$$
-
-Numerically, $\left|r-\frac{1}{\phi}\right| \approx$ {(() =>
-  Math.abs((15 / (8 * Math.PI ** 2)) ** (1 / 5) - 1 / Math.PHI).toFixed(18)
-)()}.
-
-one may find this patter rather strange, this fuzzy correlative to the hundreths and thousanths, coincidence exists in the higher dimensions, consider again below at dimension 2
+================================
 
 For dimension 2 (the circle):
 
@@ -195,51 +129,57 @@ noting again this strange nesting of the residual error into powers of 10 of the
 
 The key observation is that in every case $x_{\pi,n}$ is the unique value that makes the prefactor constants cancel, collapsing the volume formula to $1=(\phi r)^n$:
 
-**2D** — $A=x_{\pi,2}r^2$, $x_{\pi,2}=\phi^2$:
-$$A=\phi^2 r^2\;\Rightarrow\; 1=(\phi r)^2\checkmark$$
+$$ V_{4-sphere} = \frac{\pi^2}{2}r^4 $$
 
-**3D** — $V=\frac{4}{3}x_{\pi,3}r^3$, $x_{\pi,3}=\frac{3\phi^3}{4}$ (note $\frac{4}{3}\cdot\frac{3}{4}=1$):
-$$V=\frac{4}{3}\cdot\frac{3\phi^3}{4}r^3=\phi^3 r^3\;\Rightarrow\; 1=(\phi r)^3\checkmark$$
 
-Numerically, $x_{\pi,3}\approx$ {(() => ((3 * Math.PHI ** 3) / 4).toFixed(18))()} and $\left|x_{\pi,3}-\pi\right|\approx$ {(() =>
-  Math.abs((3 * Math.PHI ** 3) / 4 - Math.PI).toFixed(18)
+For a unit 4-volume, set $V_{4\text{-sphere}}=1$:
+
+$$1=\frac{\pi^2}{2}r^4 \;\Rightarrow\; r=\left(\frac{2}{\pi^2}\right)^{1/4}.$$
+
+Numerically, $r \approx$ {(() => ((2 / (Math.PI ** 2)) ** 0.25).toFixed(18))()}.
+The difference $\left|r-\frac{1}{\phi}\right| \approx$ {(() =>
+  Math.abs((2 / (Math.PI ** 2)) ** 0.25 - 1 / Math.PHI).toFixed(18)
+)()}.
+This is very close to $\frac{\phi^2}{5}\cdot\frac{1}{10} = \frac{\phi^2}{50} \approx$ {(() => ((Math.PHI ** 2) / 50).toFixed(18))()}, with absolute difference $\approx$ {(() =>
+  Math.abs(Math.abs((2 / (Math.PI ** 2)) ** 0.25 - 1 / Math.PHI) - (Math.PHI ** 2) / 50).toFixed(18)
+)()}.
+Note the odd recursive flavor in this error term: at higher precision, the residual appears to "tunnel" down through powers of 10 with the cubitic relation, this becomes more stark later
+
+let us reaffirm the 5 dimension case for veracity
+the volume and radius of a 5 sphere are
+
+$$V_{5\text{-sphere}}=\frac{8\pi^2}{15}r^5$$
+
+$$r=\left(\frac{15V}{8\pi^2}\right)^{1/5}$$
+
+For unit volume $(V=1)$:
+
+$$r=\left(\frac{15}{8\pi^2}\right)^{1/5}.$$
+
+Numerically, $r \approx$ {(() => ((15 / (8 * Math.PI ** 2)) ** (1 / 5)).toFixed(18))()}.
+
+While we are slightly departed we still are on target well with the difference of this with the little golden ratio as 
+
+$$\left|r-\frac{1}{\phi}\right|=\left|\left(\frac{15}{8\pi^2}\right)^{1/5}-\frac{1}{\phi}\right|.$$
+
+Numerically, $\left|r-\frac{1}{\phi}\right| \approx$ {(() =>
+  Math.abs((15 / (8 * Math.PI ** 2)) ** (1 / 5) - 1 / Math.PHI).toFixed(18)
 )()}.
 
-**4D** — $V=\frac{x_{\pi,4}^2}{2}r^4$, $x_{\pi,4}=\phi^2\sqrt{2}$ (note $\frac{(\phi^2\sqrt{2})^2}{2}=\frac{2\phi^4}{2}=\phi^4$):
-$$V=\frac{x_{\pi,4}^2}{2}r^4=\phi^4 r^4\;\Rightarrow\; 1=(\phi r)^4\checkmark$$
-
-Numerically, $x_{\pi,4}\approx$ {(() => (Math.PHI ** 2 * Math.sqrt(2)).toFixed(18))()} and $\left|x_{\pi,4}-\pi\right|\approx$ {(() =>
-  Math.abs(Math.PHI ** 2 * Math.sqrt(2) - Math.PI).toFixed(18)
-)()}.
-
-**5D** — $V=\frac{8x_{\pi,5}^2}{15}r^5$, $x_{\pi,5}=\sqrt{\frac{15\phi^5}{8}}$ (note $\frac{8}{15}\cdot\frac{15\phi^5}{8}=\phi^5$):
-$$V=\frac{8x_{\pi,5}^2}{15}r^5=\phi^5 r^5\;\Rightarrow\; 1=(\phi r)^5\checkmark$$
-
-Numerically, $x_{\pi,5}\approx$ {(() => Math.sqrt((15 * Math.PHI ** 5) / 8).toFixed(18))()} and $\left|x_{\pi,5}-\pi\right|\approx$ {(() =>
-  Math.abs(Math.sqrt((15 * Math.PHI ** 5) / 8) - Math.PI).toFixed(18)
-)()}.
+one may find this patter rather strange, this fuzzy correlative to the hundreths and thousanths, coincidence exists in the higher dimensions, consider again below at dimension 2
 
 
-**6D** — $V=\frac{x_{\pi,6}^3}{6}r^6$, $x_{\pi,6}^3=6\phi^6$ (note $\frac{6}{6}=1$):
-$$V=\frac{6\phi^6}{6}r^6=\phi^6 r^6\;\Rightarrow\; 1=(\phi r)^6\checkmark \quad x_{\pi,6}=6^{1/3}\phi^2$$
-
-Numerically, $x_{\pi,6}\approx$ {(() => (6 ** (1/3) * Math.PHI ** 2).toFixed(18))()} and $\left|x_{\pi,6}-\pi\right|\approx$ {(() =>
-  Math.abs(6 ** (1/3) * Math.PHI ** 2 - Math.PI).toFixed(18)
-)()}.
-
-**7D** — $V=\frac{16x_{\pi,7}^3}{105}r^7$, $x_{\pi,7}^3=\frac{105\phi^7}{16}$ (note $\frac{16}{105}\cdot\frac{105}{16}=1$):
-$$V=\phi^7 r^7\;\Rightarrow\; 1=(\phi r)^7\checkmark \quad x_{\pi,7}=\left(\frac{105\phi^7}{16}\right)^{1/3}$$
-
-Numerically, $x_{\pi,7}\approx$ {(() => ((105 * Math.PHI ** 7) / 16) ** (1/3).toFixed(18))()} and $\left|x_{\pi,7}-\pi\right|\approx$ {(() =>
-  Math.abs(((105 * Math.PHI ** 7) / 16) ** (1/3) - Math.PI).toFixed(18)
-)()}.
-
-**8D** — $V=\frac{x_{\pi,8}^4}{24}r^8$, $x_{\pi,8}^4=24\phi^8$ (note $\frac{24}{24}=1$):
-$$V=\phi^8 r^8\;\Rightarrow\; 1=(\phi r)^8\checkmark \quad x_{\pi,8}=24^{1/4}\phi^2$$
-
-Numerically, $x_{\pi,8}\approx$ {(() => (24 ** (1/4) * Math.PHI ** 2).toFixed(18))()} and $\left|x_{\pi,8}-\pi\right|\approx$ {(() =>
-  Math.abs(24 ** (1/4) * Math.PHI ** 2 - Math.PI).toFixed(18)
-)()}.
+| Dim | Equation term | Solved $x_{\pi,n}$ | $\phi$ form | abs$(x_{\pi,n}-\pi)$ | target $t_n$ | abs$(\text{abs}(x_{\pi,n}-\pi)-t_n)$ |
+|---|---|---|---|---:|---|---:|
+| 0D | point count | n/a | $(\phi r)^0$ | n/a | n/a | n/a |
+| 1D | $2r$ | n/a | $(\phi r)^1$ | n/a | n/a | n/a |
+| 2D | $x_{\pi,2}r^2$ | $\phi^2$ | $(\phi r)^2$ | {(() => Math.abs(Math.PHI ** 2 - Math.PI).toFixed(18))()} | $\phi^2/5$ | {(() => Math.abs(Math.abs(Math.PHI ** 2 - Math.PI) - (Math.PHI ** 2) / 5).toFixed(18))()} |
+| 3D | $\frac{4}{3}x_{\pi,3}r^3$ | $3\phi^3/4$ | $(\phi r)^3$ | {(() => Math.abs((3 * Math.PHI ** 3) / 4 - Math.PI).toFixed(18))()} | $\phi^-7$ | {(() => Math.abs(Math.abs((3 * Math.PHI ** 3) / 4 - Math.PI) - Math.PHI ** -7).toFixed(18))()} |
+| 4D | $\frac{x_{\pi,4}^2}{2}r^4$ | $\phi^2\sqrt{2}$ | $(\phi r)^4$ | {(() => Math.abs(Math.PHI ** 2 * Math.sqrt(2) - Math.PI).toFixed(18))()} | $\phi^2/5$ | {(() => Math.abs(Math.abs(Math.PHI ** 2 * Math.sqrt(2) - Math.PI) - (Math.PHI ** 2) / 5).toFixed(18))()} |
+| 5D | $\frac{8x_{\pi,5}^2}{15}r^5$ | $\sqrt{15\phi^5/8}$ | $(\phi r)^5$ | {(() => Math.abs(Math.sqrt((15 * Math.PHI ** 5) / 8) - Math.PI).toFixed(18))()} | $\sqrt{2}$ | {(() => Math.abs(Math.abs(Math.sqrt((15 * Math.PHI ** 5) / 8) - Math.PI) - Math.sqrt(2)).toFixed(18))()} |
+| 6D | $\frac{x_{\pi,6}^3}{6}r^6$ | $6^{1/3}\phi^2$ | $(\phi r)^6$ | {(() => Math.abs(6 ** (1 / 3) * Math.PHI ** 2 - Math.PI).toFixed(18))()} | $\phi$ | {(() => Math.abs(Math.abs(6 ** (1 / 3) * Math.PHI ** 2 - Math.PI) - Math.PHI).toFixed(18))()} |
+| 7D | $\frac{16x_{\pi,7}^3}{105}r^7$ | $(105\phi^7/16)^{1/3}$ | $(\phi r)^7$ | {(() => Math.abs(((105 * Math.PHI ** 7) / 16) ** (1 / 3) - Math.PI).toFixed(18))()} | $\phi^2$ | {(() => Math.abs(Math.abs(((105 * Math.PHI ** 7) / 16) ** (1 / 3) - Math.PI) - Math.PHI ** 2).toFixed(18))()} |
+| 8D | $\frac{x_{\pi,8}^4}{24}r^8$ | $24^{1/4}\phi^2$ | $(\phi r)^8$ | {(() => Math.abs(24 ** (1 / 4) * Math.PHI ** 2 - Math.PI).toFixed(18))()} | $\phi^2$ | {(() => Math.abs(Math.abs(24 ** (1 / 4) * Math.PHI ** 2 - Math.PI) - Math.PHI ** 2).toFixed(18))()} |
 
 In every dimension the prefactor constants are precisely the inverse of the volume-formula coefficient — $\frac{4}{3}\leftrightarrow\frac{3}{4}$, $\frac{1}{2}\leftrightarrow 2$, $\frac{8}{15}\leftrightarrow\frac{15}{8}$ — so they annihilate, and the whole tower collapses to the single statement
 
@@ -248,7 +188,9 @@ $$1=(\phi r)^n.$$
 
 Now, remembering that the cubit is hypothesized as a dimension climbing device, so now we have strange values of pi that correspond to each dimension, that 'warp' the field to make th mathematical coincidence mathematical fact- its this extreme and mean proportion abuse that makes it a n+1th dimension commensurability resolver
 
-remember we were reasoning about the ratio of volume of the sphere and the volume of the box, let us now use our unique values of pi corresponding to each dimension and see $ y_{\odot,n} $
+remember we were reasoning about the ratio of volume of the sphere and the volume of the box, let us now use our unique values of pi corresponding to each dimension and see $ y_{\odot,n} $ where y is the cubit infered by a particiular dimension
+
+$$ \odot = \frac{V_{sphere}}{V_{cube}} $$
 
 $$y_{\odot,3}=\frac{\phi^3}{8}\approx\frac{\pi}{6}$$
 {(() => (Math.PHI**3/8).toFixed(18))()} diff $\left|\phi^3/8-\pi/6\right|\approx$ {(() => Math.abs(Math.PHI**3/8 - Math.PI/6).toFixed(18))()}
@@ -274,6 +216,7 @@ Now the revelation becomes quite translucent, we have our horus eye fractions cu
 $$\odot = \frac{V_{\text{unit-}n\text{-sphere}}}{V_{\text{unit-}n\text{-box}}} = \frac{\sum_{n=0}^{\infty} \frac{\phi^n}{2^n}}{10} = \frac{\phi^2}{5} \approx \frac{\pi}{6} $$
 
 which cements the theory that it was a multidimensional interrelator beyond just the 2d and 3d with all the fixings of the egyptian mathematical system, the horus powers of two, the golden mean, pi, and powers of 10. phi pi cubit and the metre all in one. and shows how this process loops back into itself with commensurate perfection suggesting nature uses phi not pi.
+
 
 ![All dressed](/img/all-dressed.png)
 Source pyramid k 2019
