@@ -65,11 +65,135 @@ Numerically $3\phi^3/4 \approx$ {(() => ((3 * Math.PHI ** 3) / 4).toFixed(6))()}
 
 now if we utilize this value of pi in the volume relation
 
-$$ V_{sphere} = 1 = \frac{4}{3 x r^3} = \frac{4}{3 \frac{3 \phi^3}{4} r^3} = r^3 \phi^3 $$
+$$ V_{sphere} = \frac{4}{3 x r^3} = \frac{4}{3 \frac{3 \phi^3}{4} r^3} = r^3 \phi^3 $$
 
-rather elegant, but perhaps unduely strange is this elegancy extends into the n-sphere
+when $r = \frac{1}{\phi}$
 
-so if you perform this exerciste in 4 or 5th dimension you will find the approximation
+$$ V_{sphere} = \frac{1}{\phi}^3 \phi^3 = 1^3 $$
+
+when the radius of a sphere is $\frac{1}{\phi}$ its enclosing boxes's length is $\frac{2}{\phi}$
+
+$$ V_{box} = \frac{2}{\phi}^3 = \frac{8}{\phi^3}$$
+
+making the ratio of the 3 sphere to the 3 box
+
+$$ V_{sphere} \over V_{box} = \frac{\phi^3}{8} = \frac{\phi^3}{2^3} $$
+
+to find a pattern amongst the nth dimension we prod the 2 dimensional case in light of these revelations
+
+if we were consider a sort of strange mathematical universe that neglects $\pi$ as a natural constant, that universe is not obligated to obey pi, but is destined to disintemediate pressure somewhat uniformly about its degrees of freedom ie its dimensional axies.
+
+<DocVideo src="https://www.youtube.com/watch?v=6dTyOl1fmDo" />
+
+Source: [https://www.youtube.com/watch?v=6dTyOl1fmDo](https://www.youtube.com/watch?v=6dTyOl1fmDo)
+
+<DocImg src="/img/pi-pressure-cubit.png" style={{maxWidth: '100%'}} />
+
+What's interesting here is an incommensurable angle when they require $\pi$ from the collision (pressure disintermediation) of two blocks. The cubit makes the relationship multidimensional: a circle of diameter 1 has an arc length of $6 \cdot \text{cubit}$, and the ratio between the volume of a sphere and the volume of the enclosing box is the cubit as well.
+
+A pleasing notion that the incommensurability brought forth in the is pi method is now not stuffed into a corner per say, but kinda distributed six wise along the cirle
+
+the experiment in the least and be confirmed below in the second dimension and again in the 4th
+
+
+
+
+$$ V_{4-sphere} = \frac{\pi^2}{2}r^4 $$
+
+
+For a unit 4-volume, set $V_{4\text{-sphere}}=1$:
+
+$$1=\frac{\pi^2}{2}r^4 \;\Rightarrow\; r=\left(\frac{2}{\pi^2}\right)^{1/4}.$$
+
+Numerically, $r \approx$ {(() => ((2 / (Math.PI ** 2)) ** 0.25).toFixed(18))()}.
+The difference $\left|r-\frac{1}{\phi}\right| \approx$ {(() =>
+  Math.abs((2 / (Math.PI ** 2)) ** 0.25 - 1 / Math.PHI).toFixed(18)
+)()}.
+This is very close to $\frac{\phi^2}{5}\cdot\frac{1}{10} = \frac{\phi^2}{50} \approx$ {(() => ((Math.PHI ** 2) / 50).toFixed(18))()}, with absolute difference $\approx$ {(() =>
+  Math.abs(Math.abs((2 / (Math.PI ** 2)) ** 0.25 - 1 / Math.PHI) - (Math.PHI ** 2) / 50).toFixed(18)
+)()}.
+Note the odd recursive flavor in this error term: at higher precision, the residual appears to "tunnel" down through powers of 10 with the cubitic relation, this becomes more stark later
+
+
+let us reaffirm the 5 dimension case for veracity
+
+the volume and radius of a 5 sphere are
+
+$$V_{5\text{-sphere}}=\frac{8\pi^2}{15}r^5$$
+
+$$r=\left(\frac{15V}{8\pi^2}\right)^{1/5}$$
+
+For unit volume $(V=1)$:
+
+$$r=\left(\frac{15}{8\pi^2}\right)^{1/5}.$$
+
+Numerically, $r \approx$ {(() => ((15 / (8 * Math.PI ** 2)) ** (1 / 5)).toFixed(18))()}.
+
+While we are slightly departed we still are on target well with the difference of this with the little golden ratio as 
+
+$$\left|r-\frac{1}{\phi}\right|=\left|\left(\frac{15}{8\pi^2}\right)^{1/5}-\frac{1}{\phi}\right|.$$
+
+Numerically, $\left|r-\frac{1}{\phi}\right| \approx$ {(() =>
+  Math.abs((15 / (8 * Math.PI ** 2)) ** (1 / 5) - 1 / Math.PHI).toFixed(18)
+)()}.
+
+one may find this patter rather strange, this fuzzy correlative to the hundreths and thousanths, coincidence exists in the higher dimensions, consider again below at dimension 2
+
+For dimension 2 (the circle):
+
+$$A_{\text{circle}}=\pi r^2$$
+
+$$r=\sqrt{\frac{A}{\pi}}$$
+
+For unit area $(A=1)$:
+
+$$r=\frac{1}{\sqrt{\pi}}.$$
+
+Numerically, $r \approx$ {(() => (1 / Math.sqrt(Math.PI)).toFixed(18))()}.
+The difference $\left|r-\frac{1}{\phi}\right| \approx$ {(() =>
+  Math.abs(1 / Math.sqrt(Math.PI) - 1 / Math.PHI).toFixed(18)
+)()}.
+
+
+
+
+
+
+$$ V_{4-box} = (2r)^4 $$
+
+$$\frac{V_{4\text{-sphere}}}{V_{4\text{-box}}}=\frac{\frac{\pi^2}{2}r^4}{2^4r^4}$$
+$$=\frac{\pi^2}{2^5}=\frac{\pi^2}{32}$$
+
+
+
+
+
+
+
+let us aproach the formula blindly again, without a knowledge of pi,  but from a reasoning about the relationship between the 4-sphere and the 4-volume.
+
+$$\odot_4 = \frac{\pi^2}{2}$$
+
+and if we commit to approximate pi with phi
+
+$$ \odot_4 = \frac{\frac{6 \phi^2}{5}^2}{2} $$
+
+So in powers of $\phi$ only:
+
+$$\odot_4 = \frac{18}{25}\phi^4.$$
+
+Numerically, $\odot_4 \approx$ {(() => ((((6 * Math.PHI ** 2) / 5) ** 2) / 2).toFixed(6))()} and $\left|\frac{\pi^2}{2} - \odot_4\right| \approx$ {(() =>
+  Math.abs((Math.PI ** 2) / 2 - (((6 * Math.PHI ** 2) / 5) ** 2) / 2).toFixed(6)
+)()}.
+
+
+
+
+
+
+
+
+
 
 $$ V_{unit-n-sphere} = 1 \approx \phi^n r^n $$
 
@@ -78,6 +202,12 @@ this beauty alone motivates the perspective that the royal cubit wasn't some con
 given the royal cubits use as a volumetric relation, the ratio between the volume of the sphere, and the volume of the box that encloses that sphere, and that
 
 $$ V_{unit-n-box} = 1 = r^n $$
+
+for example, in 4 dimensions
+
+$$ V_{4-sphere} = \frac{\pi^2}{2}r^4$$
+
+what is the imp
 
 we derive
 
@@ -90,3 +220,9 @@ which cements the theory that it was a multidimensional interrelator beyond just
 ![All dressed](/img/all-dressed.png)
 Source pyramid k 2019
 
+
+
+## Test B Approximations of horus eye fractsion
+
+sum 0..6
+sum 0..3
