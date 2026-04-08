@@ -28,6 +28,27 @@ function nBallVolume(n: number, r: number, pi: number = Math.PI): number {
   }
 }
 
+function unitNBallRadius(n: number, pi: number = Math.PI): number {
+  if (n === 0) return NaN;
+  if (n === 1) return 1 / (2 * pi);
+  if (n === 2) return 1 / Math.sqrt(pi);
+  
+  const k = Math.floor(n / 2);
+  if (n % 2 === 0) {
+    return (factorial(k) / pi ** k) ** (1 / n);
+  } else {
+    const doubleFactorial = (m: number): number => {
+      if (m <= 0) return 1;
+      let result = 1;
+      for (let i = m; i > 0; i -= 2) {
+        result *= i;
+      }
+      return result;
+    };
+    return (doubleFactorial(n) / (2 * factorial(k) * (4 * pi) ** k)) ** (1 / n);
+  }
+}
+
 interface DimensionData {
   dim: number;
   volumeFormulaString: string;
@@ -47,7 +68,7 @@ const dimensionData: DimensionData[] = [
     phiForm: '(\\phi r)^0',
     targetTn: '\\phi^{3/2}',
     computeXPiN: () => 1,
-    computeRealRadius: () => NaN,
+    computeRealRadius: () => unitNBallRadius(0),
     computeTargetTn: () => PHI ** (3 / 2),
   },
   {
@@ -57,7 +78,7 @@ const dimensionData: DimensionData[] = [
     phiForm: '(\\phi r)^1',
     targetTn: '\\phi^{7/4}',
     computeXPiN: () => PHI / 2,
-    computeRealRadius: () => 1 / (2 * Math.PI),
+    computeRealRadius: () => unitNBallRadius(1),
     computeTargetTn: () => PHI ** (7 / 4),
   },
   {
@@ -67,7 +88,7 @@ const dimensionData: DimensionData[] = [
     phiForm: '(\\phi r)^2',
     targetTn: '\\phi^2/5',
     computeXPiN: () => PHI ** 2,
-    computeRealRadius: () => 1 / Math.sqrt(Math.PI),
+    computeRealRadius: () => unitNBallRadius(2),
     computeTargetTn: () => (PHI ** 2) / 5,
   },
   {
@@ -77,7 +98,7 @@ const dimensionData: DimensionData[] = [
     phiForm: '(\\phi r)^3',
     targetTn: '\\phi^{-7}',
     computeXPiN: () => (3 * PHI ** 3) / 4,
-    computeRealRadius: () => (3 / (4 * Math.PI)) ** (1 / 3),
+    computeRealRadius: () => unitNBallRadius(3),
     computeTargetTn: () => PHI ** -7,
   },
   {
@@ -87,7 +108,7 @@ const dimensionData: DimensionData[] = [
     phiForm: '(\\phi r)^4',
     targetTn: '\\phi^2/5',
     computeXPiN: () => PHI ** 2 * Math.sqrt(2),
-    computeRealRadius: () => (2 / Math.PI ** 2) ** 0.25,
+    computeRealRadius: () => unitNBallRadius(4),
     computeTargetTn: () => (PHI ** 2) / 5,
   },
   {
@@ -97,7 +118,7 @@ const dimensionData: DimensionData[] = [
     phiForm: '(\\phi r)^5',
     targetTn: '\\sqrt{2}',
     computeXPiN: () => Math.sqrt((15 * PHI ** 5) / 8),
-    computeRealRadius: () => (15 / (8 * Math.PI ** 2)) ** (1 / 5),
+    computeRealRadius: () => unitNBallRadius(5),
     computeTargetTn: () => Math.sqrt(2),
   },
   {
@@ -107,7 +128,7 @@ const dimensionData: DimensionData[] = [
     phiForm: '(\\phi r)^6',
     targetTn: '\\phi',
     computeXPiN: () => 6 ** (1 / 3) * PHI ** 2,
-    computeRealRadius: () => (1 / Math.PI) ** (1 / 3),
+    computeRealRadius: () => unitNBallRadius(6),
     computeTargetTn: () => PHI,
   },
   {
@@ -117,7 +138,7 @@ const dimensionData: DimensionData[] = [
     phiForm: '(\\phi r)^7',
     targetTn: '\\phi^2',
     computeXPiN: () => ((105 * PHI ** 7) / 16) ** (1 / 3),
-    computeRealRadius: () => (105 / (16 * Math.PI ** 3)) ** (1 / 7),
+    computeRealRadius: () => unitNBallRadius(7),
     computeTargetTn: () => PHI ** 2,
   },
   {
@@ -127,7 +148,7 @@ const dimensionData: DimensionData[] = [
     phiForm: '(\\phi r)^8',
     targetTn: '\\phi^2',
     computeXPiN: () => 24 ** (1 / 4) * PHI ** 2,
-    computeRealRadius: () => (24 / Math.PI ** 4) ** (1 / 8),
+    computeRealRadius: () => unitNBallRadius(8),
     computeTargetTn: () => PHI ** 2,
   },
 ];
