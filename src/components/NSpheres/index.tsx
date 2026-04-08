@@ -32,21 +32,14 @@ function unitNBallRadius(n: number, pi: number = Math.PI): number {
   if (n === 0) return NaN;
   if (n === 1) return 1 / (2 * pi);
   if (n === 2) return 1 / Math.sqrt(pi);
+  if (n === 3) return (3 / (4 * pi)) ** (1 / 3);
+  if (n === 4) return (2 / pi ** 2) ** 0.25;
+  if (n === 5) return (15 / (8 * pi ** 2)) ** (1 / 5);
+  if (n === 6) return (1 / pi) ** (1 / 3);
+  if (n === 7) return (105 / (16 * pi ** 3)) ** (1 / 7);
+  if (n === 8) return (24 / pi ** 4) ** (1 / 8);
   
-  const k = Math.floor(n / 2);
-  if (n % 2 === 0) {
-    return (factorial(k) / pi ** k) ** (1 / n);
-  } else {
-    const doubleFactorial = (m: number): number => {
-      if (m <= 0) return 1;
-      let result = 1;
-      for (let i = m; i > 0; i -= 2) {
-        result *= i;
-      }
-      return result;
-    };
-    return (doubleFactorial(n) / (2 * factorial(k) * (4 * pi) ** k)) ** (1 / n);
-  }
+  return NaN;
 }
 
 interface DimensionData {
