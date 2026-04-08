@@ -168,25 +168,40 @@ Numerically, $\left|r-\frac{1}{\phi}\right| \approx$ {(() =>
 
 one may find this patter rather strange, this fuzzy correlative to the hundreths and thousanths, coincidence exists in the higher dimensions, consider again below at dimension 2
 
+import NSphereTable from '@site/src/components/NSpheres';
 
-| Dim | n-volume | Solved $x_{\pi,n}$ | $\phi$ form | abs$(x_{\pi,n}-\pi)$ | target $t_n$ | abs$(\text{abs}(x_{\pi,n}-\pi)-t_n)$ |
-|---|---|---|---|---:|---|---:|
-| 0D | $x_{\pi,0} r^0$ | $\phi^0=1$ | $(\phi r)^0$ | {(() => Math.abs(1 - Math.PI).toFixed(18))()} | $\phi^{3/2}$ | {(() => Math.abs(Math.abs(1 - Math.PI) - Math.PHI ** (3 / 2)).toFixed(18))()} |
-| 1D | $2x_{\pi,1}r$ | $\phi/2$ | $(\phi r)^1$ | {(() => Math.abs(Math.PHI / 2 - Math.PI).toFixed(18))()} | $\phi^{7/4}$ | {(() => Math.abs(Math.abs(Math.PHI / 2 - Math.PI) - Math.PHI ** (7 / 4)).toFixed(18))()} |
-| 2D | $x_{\pi,2}r^2$ | $\phi^2$ | $(\phi r)^2$ | {(() => Math.abs(Math.PHI ** 2 - Math.PI).toFixed(18))()} | $\phi^2/5$ | {(() => Math.abs(Math.abs(Math.PHI ** 2 - Math.PI) - (Math.PHI ** 2) / 5).toFixed(18))()} |
-| 3D | $\frac{4}{3}x_{\pi,3}r^3$ | $3\phi^3/4$ | $(\phi r)^3$ | {(() => Math.abs((3 * Math.PHI ** 3) / 4 - Math.PI).toFixed(18))()} | $\phi^{-7}$ | {(() => Math.abs(Math.abs((3 * Math.PHI ** 3) / 4 - Math.PI) - Math.PHI ** -7).toFixed(18))()} |
-| 4D | $\frac{x_{\pi,4}^2}{2}r^4$ | $\phi^2\sqrt{2}$ | $(\phi r)^4$ | {(() => Math.abs(Math.PHI ** 2 * Math.sqrt(2) - Math.PI).toFixed(18))()} | $\phi^2/5$ | {(() => Math.abs(Math.abs(Math.PHI ** 2 * Math.sqrt(2) - Math.PI) - (Math.PHI ** 2) / 5).toFixed(18))()} |
-| 5D | $\frac{8x_{\pi,5}^2}{15}r^5$ | $\sqrt{15\phi^5/8}$ | $(\phi r)^5$ | {(() => Math.abs(Math.sqrt((15 * Math.PHI ** 5) / 8) - Math.PI).toFixed(18))()} | $\sqrt{2}$ | {(() => Math.abs(Math.abs(Math.sqrt((15 * Math.PHI ** 5) / 8) - Math.PI) - Math.sqrt(2)).toFixed(18))()} |
-| 6D | $\frac{x_{\pi,6}^3}{6}r^6$ | $6^{1/3}\phi^2$ | $(\phi r)^6$ | {(() => Math.abs(6 ** (1 / 3) * Math.PHI ** 2 - Math.PI).toFixed(18))()} | $\phi$ | {(() => Math.abs(Math.abs(6 ** (1 / 3) * Math.PHI ** 2 - Math.PI) - Math.PHI).toFixed(18))()} |
-| 7D | $\frac{16x_{\pi,7}^3}{105}r^7$ | $(105\phi^7/16)^{1/3}$ | $(\phi r)^7$ | {(() => Math.abs(((105 * Math.PHI ** 7) / 16) ** (1 / 3) - Math.PI).toFixed(18))()} | $\phi^2$ | {(() => Math.abs(Math.abs(((105 * Math.PHI ** 7) / 16) ** (1 / 3) - Math.PI) - Math.PHI ** 2).toFixed(18))()} |
-| 8D | $\frac{x_{\pi,8}^4}{24}r^8$ | $24^{1/4}\phi^2$ | $(\phi r)^8$ | {(() => Math.abs(24 ** (1 / 4) * Math.PHI ** 2 - Math.PI).toFixed(18))()} | $\phi^2$ | {(() => Math.abs(Math.abs(24 ** (1 / 4) * Math.PHI ** 2 - Math.PI) - Math.PHI ** 2).toFixed(18))()} |
+<NSphereTable />
+
+:::note[Table Guide: The Journey of a Row]
+
+Each row traces a dimensional investigation:
+
+1. **Dimension** — We begin at dimension 0 and climb upward through the dimensional ladder.
+
+2. **n-volume $V_n=1$** — The volume formula for an n-sphere in that dimension.
+
+3. **$r$ when $x_{\pi,n}=\pi$** — The radius of a unit-volume n-sphere using the "real" $\pi$. Remarkably, no matter what dimension we inhabit, this radius hovers near $1/\phi$.
+
+4. **abs$(r-1/\phi)$** — The proximity of that radius to the golden ratio's reciprocal, quantifying the dimensional invariance of this coincidence.
+
+5. **$x_{\pi,n}$ at $r=1/\phi$** — We now reverse the question: if we *force* $V=1$ and $r=1/\phi$, what value must "$\pi$" take in that dimension? This is our **dimensionally attuned** $\pi$.
+
+6. **$\phi$ form** — The dimensionally attuned $\pi$ always resolves to the elegant form $(\phi r)^n = 1$.
+
+7. **abs$(x_{\pi,n}-\pi)$** — How far is our dimensionally attuned $\pi$ from the true $\pi$? This is the primary error.
+
+8. **target $t_n$** — We seek the simplest approximation to this error using powers and combinations of $\phi$, $\sqrt{2}$, and simple rational fractions (Horus eye fractions, cubits). These targets are chosen by hand to reflect ancient metrology's preference for these constants.
+
+9. **abs(abs$(x_{\pi,n}-\pi)-t_n$)** — The error *of* the error. This "error tunneling" reveals a recursive structure: the residuals themselves approximate golden-ratio-based constants, suggesting a fractal self-similarity in the dimensional coincidences.
+
+:::
 
 In every dimension the prefactor constants are precisely the inverse of the volume-formula coefficient — $\frac{4}{3}\leftrightarrow\frac{3}{4}$, $\frac{1}{2}\leftrightarrow 2$, $\frac{8}{15}\leftrightarrow\frac{15}{8}$ — so they annihilate, and the whole tower collapses to the single statement
 
 $$1=(\phi r)^n.$$
 
 
-Now, remembering that the cubit is hypothesized as a dimension climbing device, so now we have strange values of pi that correspond to each dimension, that 'warp' the field to make th mathematical coincidence mathematical fact- its this extreme and mean proportion abuse that makes it a n+1th dimension commensurability resolver
+Now, remembering that the cubit is hypothesized as a dimension climbing device, so now we have strange values of pi that correspond to each dimension, if geometrically we intepret pi as a ratio of the 2d circles circumference to its diameter, we may interpret $x_{pi,n}$ as distortion one incurs by trying to save information about the volume as a radius as a holographic principle would dictate.  if you can just store $r= {x:1}$, and infer at runtime $V={x:a,y:b,z:c}=1$ albeit with lack of precision in location or momentumt. One 'warps' the field to make n'th mathematical coincidence mathematical fact- its this extreme and mean proportion abuse that makes it a n+1th dimension commensurability resolver
 
 remember we were reasoning about the ratio of volume of the sphere and the volume of the box, let us now use our unique values of pi corresponding to each dimension and see $ y_{\odot,n} $ where y is the cubit infered by a particiular dimension
 
