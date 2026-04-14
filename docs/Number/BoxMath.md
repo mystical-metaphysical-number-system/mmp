@@ -62,4 +62,32 @@ $$
 
 This reframes what integers mean in MMP: not a count of empty boxes assembled from a zero that was given, but a **topological invariant** of a self-knotted void. The empty box is still the unit. But the unit is not flat — it is a fold, and the number is the depth of the folding. See [Knot Theory](../Applications/KnotTheory.md) for the full extension.
 
-_TODO: develop the full box arithmetic operations — addition, multiplication, and the higher-order caret operations_
+## Box Arithmetic Operations
+
+The four fundamental operations on boxes follow directly from the multiset structure:
+
+**Addition** (box union with multiplicity) — merge the contents of two boxes into one:
+
+$$
+\langle A, B \rangle + \langle C \rangle = \langle A, B, C \rangle
+$$
+
+Note that $\langle x, x \rangle \neq \langle 2x \rangle$ — repetition is preserved, not collapsed. This is distinct from algebraic simplification.
+
+**Multiplication** (Cauchy / caret product) — form all pairwise products of elements:
+
+$$
+A \times B = \{ a \cdot b \mid a \in A,\, b \in B \}
+$$
+
+For polynumbers (boxes of naturals), this is the standard Cauchy convolution of coefficient arrays. For general boxes it is the Cartesian product.
+
+**The caret** `A ^ B` generalises this to a box-valued outer product, and is the engine behind the Finite Ideal Approximation exercises in [Box Math & Primes to 11](../ArchaeoArithmetic/BoxMath/BoxMathPrimes.md):
+
+$$
+\{1, 2\} \mathop{\hat{}}\, \{1, 3\} = \{1 \cdot 1,\, 1 \cdot 3,\, 2 \cdot 1,\, 2 \cdot 3\} = \{1, 2, 3, 6\}
+$$
+
+**Evaluation** $p(A)$ — substitute a box $A$ in place of the variable in a polynumber $p$, then apply multiplication. Element evaluation $p\langle A \rangle$ distributes elementwise: $p\langle A \rangle = \langle p(a) \mid a \in A \rangle$.
+
+These operations are implemented in the `boxmath` TypeScript package and the `BoxMath.sol` Solidity contract. See the [BoxMath API reference](../ArchaeoArithmetic/BoxMath/BoxMathAPI.md) for code examples, the fixed-point encoding, and how each operation maps to the classes in the library.
