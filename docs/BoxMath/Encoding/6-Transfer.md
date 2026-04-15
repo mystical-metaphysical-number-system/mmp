@@ -4,16 +4,14 @@ sidebar_position: 6
 
 # 6. A Transfer with a Tax Rate
 
-A transfer with a tax illustrates both a conservation law *and* the proportion from [§5](./5-Logic.md) in one example. Three parties hold balances — Alice, Bob, and a treasury — and we require that the total is preserved across every transaction.
-
-Model the three accounts as variables in a `MultiPoly`:
+A linear conservation law: three parties hold balances, and the total must be preserved across every transaction.
 
 ```ts
 // e₀ = Alice, e₁ = Bob, e₂ = Treasury
 const accounts = new MultiPoly([
-  new Monomial(1n, [1, 0, 0]),  // Alice
-  new Monomial(1n, [0, 1, 0]),  // Bob
-  new Monomial(1n, [0, 0, 1]),  // Treasury
+  new Monomial(1n, [1, 0, 0]),
+  new Monomial(1n, [0, 1, 0]),
+  new Monomial(1n, [0, 0, 1]),
 ]);
 
 const alice    = 300n;
@@ -23,59 +21,57 @@ const treasury = 0n;
 const S = accounts.evaluate([alice, bob, treasury]);  // 1000n
 ```
 
-Bob sends `amount` to Alice with a 10% tax retained by the treasury. The proportion $\text{tax} : \text{amount} = 10 : 100$ lives as the product identity $100 \cdot \text{tax} = 10 \cdot \text{amount}$.
+Bob sends `amount` to Alice with a 1-in-10 fraction retained by the treasury. That fraction — $\text{tax}/\text{amount} = 1/10$ — is the proportion from [§5](./5-Logic.md).
 
-## Asserting the invariant
+## The incommensurability
 
-A `transfer` function computes the new state and requires the conservation law to hold before returning:
+A proportional split requires division. In box arithmetic there is no division primitive — and that is the point: **the split is only well-defined when the denominator divides the numerator exactly**. An `amount` of `99` with a 1-in-10 rate has no valid integer split. That is an incommensurability in the same sense as §2: no natural number satisfies the relation.
+
+The caller-proposes pattern from [§7](./7-ConstantProduct.md) resolves this cleanly. The caller is responsible for finding a valid `(tax, received)` pair. The contract only asserts:
+
+1. **Proportion** — $10 \cdot \text{tax} = \text{amount}$, i.e. the proportion $1:10$ expressed as a product identity with no division
+2. **Decomposition** — $\text{tax} + \text{received} = \text{amount}$
+3. **Conservation** — the total is unchanged
 
 ```ts
 function transfer(
   alice: bigint, bob: bigint, treasury: bigint,
-  amount: bigint
+  amount: bigint,
+  tax: bigint,      // caller proposes
+  received: bigint  // caller proposes
 ): [bigint, bigint, bigint] {
   if (bob < amount) throw new Error('insufficient balance');
 
-  // compute tax, then assert the proportion — never trust a truncating division
-  const tax      = amount / 10n;
-  const received = amount - tax;
-
-  // proportion check: tax : amount = 10 : 100  ⟺  100·tax = 10·amount
-  // catches any silent truncation from the division above
-  if (100n * tax !== 10n * amount) throw new Error('tax proportion not exact');
+  // proportion: 10·tax = amount  (product identity — no division)
+  if (10n * tax !== amount) throw new Error('incommensurable split');
+  if (tax + received !== amount) throw new Error('decomposition mismatch');
 
   const next: [bigint, bigint, bigint] = [alice + received, bob - amount, treasury + tax];
-
-  // conservation invariant
   if (accounts.evaluate(next) !== S) throw new Error('invariant violated');
 
   return next;
 }
 ```
 
-:::note No floating point — but bigint division silently truncates
-`bigint` is exact arbitrary-precision integer arithmetic, not IEEE 754. There is no floating point rounding. The trap is different: `99n / 10n` gives `9n` silently — bigint truncates on inexact division without throwing.
-
-The proportion check (`100n * tax !== 10n * amount`) is the box arithmetic solution: assert the cross-multiplication identity rather than trusting the division result. If `amount / 10n` truncated, the guard fires.
-:::
-
-The `accounts.evaluate` call is the machine-checkable statement of "nothing was created or destroyed."
+No division in the contract. The proportion check fires when the split is incommensurable — when `amount` is not a multiple of `10`, there is no `(tax, received)` the caller can honestly propose. The incommensurability is surfaced explicitly rather than silently truncated.
 
 ## Confirming the math
 
 ```ts
-const [aliceNew, bobNew, treasuryNew] = transfer(alice, bob, treasury, 100n);
+// amount = 100, valid split: tax = 10, received = 90
+const [aliceNew, bobNew, treasuryNew] = transfer(300n, 700n, 0n, 100n, 10n, 90n);
 
-// aliceNew    === 390n  (300 + 90)
-// bobNew      === 600n  (700 − 100)
-// treasuryNew === 10n   (0 + 10)
+// aliceNew    === 390n
+// bobNew      === 600n
+// treasuryNew === 10n
 
 accounts.evaluate([aliceNew, bobNew, treasuryNew]);  // 1000n  ✓
 ```
 
-Two natural number constraints must hold for this to be defined at all:
+```ts
+// amount = 99 — no valid proposal exists, proportion check fires
+transfer(300n, 700n, 0n, 99n, 9n, 90n);
+// 10n * 9n = 90n ≠ 99n  → 'incommensurable split'
+```
 
-1. `bob >= amount` — subtraction must stay natural
-2. `10n | amount` — the 10% tax division must be exact
-
-A transfer of `99` tokens at 10% produces `tax = 9` (truncated — remainder $90$), meaning $10$ tokens vanish. Choosing the token unit to be a multiple of $10$ makes every valid transfer lossless.
+The unit of account must be chosen so that every valid `amount` is a multiple of the tax denominator. That is the same prescription as §2's Babylonian observation: choose your integer representation to make the required divisibility exact.

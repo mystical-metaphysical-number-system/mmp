@@ -44,7 +44,7 @@ a2.evaluate([7n, 5n]) === b2.evaluate([7n, 5n]);  // 49n !== 50n
 a2.evaluate([17n, 12n]) === b2.evaluate([17n, 12n]);  // 289n !== 288n
 ```
 
-Each pair $(a, b)$ is a Pell equation candidate. The gap shrinks but never closes — that is the precise meaning of $\sqrt{2} \notin \mathbb{N}$, expressed entirely in natural number arithmetic. The same proportion check (`100n * tax !== 10n * amount` style from [§6](./6-Transfer.md)) applies here: no division, no float, no approximation — just two products that must match.
+Each pair $(a, b)$ is a Pell equation candidate. The gap shrinks but never closes — that is the precise meaning of $\sqrt{2} \notin \mathbb{N}$, expressed entirely in natural number arithmetic. The same proportion check (`10n * tax !== amount` style from [§6](./6-Transfer.md)) applies here: no division, no float, no approximation — just two products that must match.
 
 ## In practice
 

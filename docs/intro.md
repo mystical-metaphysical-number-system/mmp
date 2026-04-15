@@ -70,7 +70,7 @@ Length & precision, physical & metaphysical, mystical numbers, the resolution (o
 Ancient maths through an MMP lens — Egyptian number systems, π/φ/powers-of-2 coincidences, the cubit, the Great Pyramid, 11-odd-limit, precession and the Great Year.
 
 - [Egyptian Maths](./ArchaeoArithmetic/EgyptianMaths.md) · [Mathematical Coincidences](./ArchaeoArithmetic/MathematicalCoincidences/MathematicalCoincidences.md) · [The Cubit](./ArchaeoArithmetic/TheCubit.md)
-- [The Great Pyramid](./ArchaeoArithmetic/GreatPyramid.md) · [Box Math & Primes to 11](./ArchaeoArithmetic/BoxMath/BoxMathPrimes.md) · [Precession & the Great Year](./ArchaeoArithmetic/PrecessionGreatYear.md)
+- [The Great Pyramid](./ArchaeoArithmetic/GreatPyramid.md) · [Box Math & Primes to 11](./ArchaeoArithmetic/BoxMathPrimes.md) · [Precession & the Great Year](./ArchaeoArithmetic/PrecessionGreatYear.md)
 
 ## Applications
 
