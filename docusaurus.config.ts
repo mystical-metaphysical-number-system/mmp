@@ -16,9 +16,9 @@ const config: Config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
-  url: 'https://polus-arcticus.github.io',
+  url: 'https://mystical-metaphysical-number-system.github.io',
   baseUrl: '/mmp/',
-  organizationName: 'polus-arcticus',
+  organizationName: 'mystical-metaphysical-number-system',
   projectName: 'mmp',
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
