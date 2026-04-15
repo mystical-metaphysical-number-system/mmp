@@ -185,11 +185,35 @@ contract BoxMath {
 }
 ```
 
+## PixelMath.sol — Ordered Pairs and Linear Algebra
+
+`PixelMath.sol` implements the ordered-pair layer: **pixels** (2-listboxes) and **vexels** (coefficient vectors over singletons). These are the building blocks for linear algebra in box arithmetic — pixels generalise matrix index pairs, and vexels generalise vectors.
+
+```solidity
+contract PixelMath {
+    struct Pixel { uint256 m; uint256 n; }
+
+    // pixel product: [m,n]·[p,q] = [m,q] when n = p, otherwise ok = false (nothing)
+    function pixelProduct(Pixel memory a, Pixel memory b)
+        public pure returns (bool ok, Pixel memory result);
+
+    function pixelTranspose(Pixel memory p) public pure returns (Pixel memory);
+    function pixelIsDiagonal(Pixel memory p) public pure returns (bool);
+
+    // pixel [m,n] with m > n > 0 → (m²−n², 2mn, m²+n²)
+    function pythagoreanTriple(Pixel memory p)
+        public pure returns (bool ok, uint256 a, uint256 b, uint256 c);
+
+    // Vexel ops — dense uint256[] coefficient vectors
+    function vexelAdd(uint256[] memory u, uint256[] memory v) public pure returns (uint256[] memory);
+    function vexelScale(uint256[] memory u, uint256 scalar) public pure returns (uint256[] memory);
+    function vexelDot(uint256[] memory u, uint256[] memory v) public pure returns (uint256);
+}
+```
+
 ---
 
 ## Relationship to the Full PDF
-
-The implemented subset covers:
 
 | PDF concept | Implementation |
 |-------------|---------------|
@@ -202,5 +226,15 @@ The implemented subset covers:
 | Evaluation $p(A)$ | `MultiPoly.evaluate` / `evaluateMultiPoly` |
 | Truncation to degree $k$ | `MultiPoly.truncate` / `truncate` |
 | Caret product $A \mathbin{\hat{}} B$ | `caretProduct` / `caretProduct` |
+| Singleton $[n]$ (1-listbox) | natural number index — no separate class needed |
+| Pixel $[m,n]$ (2-listbox) | `Pixel` / `PixelMath.sol` |
+| Vexel (box of singletons) | `Vexel` / `vexelAdd`, `vexelDot`, `vexelScale` |
+| Maxel (box of pixels) | `Maxel` / `maxelProduct`, `maxelTranspose` |
 
-The **size / multiplicity / setbox / union / intersection**, **multinumbers**, **pixels**, **vexels**, and **maxels** are not yet implemented — the library focuses on the polynomial and evaluation layer directly useful for on-chain numerics.
+The following are documented in the paper but not yet implemented:
+
+| PDF section | Concept | Notes |
+|-------------|---------|-------|
+| §5.4 | Action of maxels on vexels | Left/right pixel actions on singletons; gives non-associative "handed" algebra (`Lp`, `Rp` operators). Implementable in TypeScript but no clear on-chain primitive yet. |
+| §5.5 | Maxel bases and posets | Closure properties of pixel sets; zeta matrix / Möbius inversion. Pure combinatorics — interesting but outside current protocol use cases. |
+| §4.1+ | Multinumbers, metanumbers | Higher-depth box nesting. Research territory. |

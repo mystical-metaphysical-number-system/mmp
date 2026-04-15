@@ -4,6 +4,17 @@ sidebar_position: 3
 
 # Solidity API
 
+Two contracts ship in `hardhat/contracts/`:
+
+| Contract | Primitives |
+|----------|-----------|
+| `BoxMath.sol` | `Monomial`, `MultiPoly`, polynomial evaluation, truncation, caret product |
+| `PixelMath.sol` | `Pixel`, vexel operations, Pythagorean triple generation |
+
+---
+
+# BoxMath.sol
+
 Contract: `hardhat/contracts/BoxMath.sol`
 
 All arithmetic is **exact integer** (`uint256`) — no fixed-point scaling, no `SCALE` constant. Values passed in and returned are raw natural numbers, matching the TypeScript `bigint` API exactly.
@@ -189,4 +200,181 @@ const p = {
 // use explicit decode pattern above
 // terms.length === 2
 // evaluateMultiPoly(truncated, [5n]) === 17n  (2 + 3·5)
+```
+
+---
+
+# PixelMath.sol
+
+Contract: `hardhat/contracts/PixelMath.sol`
+
+All arithmetic is exact `uint256` — no division, no fixed-point scaling.
+
+---
+
+## Struct
+
+```solidity
+struct Pixel {
+    uint256 m;
+    uint256 n;
+}
+```
+
+A pixel $[m, n]$ is a 2-listbox of natural numbers. Think of it as a matrix index pair: `m` is the row, `n` is the column.
+
+---
+
+## `pixelProduct`
+
+```solidity
+function pixelProduct(Pixel memory a, Pixel memory b)
+    public pure returns (bool ok, Pixel memory result)
+```
+
+The **pixel product** (Definition 11): $[m,n] \cdot [p,q] = [m,q]$ when $n = p$; otherwise `ok = false` and the result is nothing (represented as `(0,0)`).
+
+```ts
+await pm.pixelProduct({ m: 3n, n: 4n }, { m: 4n, n: 11n });
+// ok = true,  result = { m: 3n, n: 11n }
+
+await pm.pixelProduct({ m: 3n, n: 4n }, { m: 5n, n: 11n });
+// ok = false  (4 ≠ 5 — nothing)
+```
+
+:::note ethers v6 struct re-use
+When passing a pixel returned by one call into a subsequent call, reconstruct a plain object first:
+
+```ts
+const [, rawAB] = await pm.pixelProduct(a, b);
+const ab = { m: rawAB.m, n: rawAB.n };   // plain object — not ethers Result
+const [ok, result] = await pm.pixelProduct(ab, c);
+```
+:::
+
+---
+
+## `pixelTranspose`
+
+```solidity
+function pixelTranspose(Pixel memory p) public pure returns (Pixel memory)
+```
+
+$[m,n]^T = [n,m]$. Satisfies $(ab)^T = b^T a^T$.
+
+---
+
+## `pixelIsDiagonal`
+
+```solidity
+function pixelIsDiagonal(Pixel memory p) public pure returns (bool)
+```
+
+Returns `true` when `m == n`.
+
+---
+
+## `pythagoreanTriple`
+
+```solidity
+function pythagoreanTriple(Pixel memory p)
+    public pure returns (bool ok, uint256 a, uint256 b, uint256 c)
+```
+
+For pixel $[m, n]$ with $m > n > 0$, returns the Pythagorean triple $(m^2-n^2,\; 2mn,\; m^2+n^2)$. Returns `ok = false` when the precondition is not met.
+
+```ts
+await pm.pythagoreanTriple({ m: 2n, n: 1n });  // ok=true,  3n, 4n,  5n
+await pm.pythagoreanTriple({ m: 3n, n: 2n });  // ok=true,  5n, 12n, 13n
+await pm.pythagoreanTriple({ m: 4n, n: 3n });  // ok=true,  7n, 24n, 25n
+```
+
+---
+
+## Maxel operations
+
+A maxel is represented as `MaxelEntry[]` — a sparse list of `(Pixel, uint256)` pairs.
+
+```solidity
+struct MaxelEntry {
+    Pixel pixel;
+    uint256 coeff;
+}
+```
+
+### `maxelTranspose`
+
+```solidity
+function maxelTranspose(MaxelEntry[] memory M)
+    public pure returns (MaxelEntry[] memory)
+```
+
+Transposes every pixel in the list.
+
+### `maxelProduct`
+
+```solidity
+function maxelProduct(MaxelEntry[] memory M, MaxelEntry[] memory N)
+    public pure returns (MaxelEntry[] memory)
+```
+
+Computes $MN = \{ pq : p \in M,\, q \in N \}$. Pixel products that are nothing are dropped; coefficients of identical result pixels are merged by summation.
+
+```ts
+// Example 22
+const M = [
+  { pixel: { m: 0n, n: 0n }, coeff: 1n },
+  { pixel: { m: 1n, n: 0n }, coeff: 1n },
+];
+const N = [
+  { pixel: { m: 1n, n: 0n }, coeff: 1n },
+  { pixel: { m: 0n, n: 2n }, coeff: 1n },
+  { pixel: { m: 2n, n: 3n }, coeff: 1n },
+];
+const MN = await pm.maxelProduct(M, N);
+// MN = [{ pixel: [0,2], coeff: 1 }, { pixel: [1,2], coeff: 1 }]
+```
+
+---
+
+## Vexel operations
+
+Vexels are represented as plain `uint256[]` — a dense coefficient vector where index `i` holds the coefficient for singleton `[i]`.
+
+### `vexelAdd`
+
+```solidity
+function vexelAdd(uint256[] memory u, uint256[] memory v)
+    public pure returns (uint256[] memory)
+```
+
+Element-wise addition; pads the shorter vector with zeros.
+
+```ts
+await pm.vexelAdd([1n, 2n, 0n], [0n, 3n, 4n]);  // [1n, 5n, 4n]
+await pm.vexelAdd([1n, 2n],     [0n, 3n, 4n]);  // [1n, 5n, 4n]
+```
+
+### `vexelScale`
+
+```solidity
+function vexelScale(uint256[] memory u, uint256 scalar)
+    public pure returns (uint256[] memory)
+```
+
+```ts
+await pm.vexelScale([1n, 2n, 3n], 3n);  // [3n, 6n, 9n]
+```
+
+### `vexelDot`
+
+```solidity
+function vexelDot(uint256[] memory u, uint256[] memory v)
+    public pure returns (uint256 sum)
+```
+
+Inner product over the shorter length.
+
+```ts
+await pm.vexelDot([1n, 2n, 3n], [4n, 5n, 6n]);  // 32n  (1·4 + 2·5 + 3·6)
 ```
