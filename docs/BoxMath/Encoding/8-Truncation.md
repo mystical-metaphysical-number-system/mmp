@@ -12,24 +12,23 @@ Box arithmetic addresses this structurally. Degree truncation (`T^k`) is the ope
 
 ---
 
-## T^k as a named trade-off
+## The size preservation law — why this is safe
 
-```ts
-p.truncate(k)  // keep terms with degree ≤ k
-```
-
-`T^1[x^2] = 0` — the zero polynomial. This is the formal sense in which "√2 doesn't exist at degree 1": no degree-1 polynomial has a root at 2. The truncation does not approximate the answer; it refuses the question.
-
-The ring homomorphism property (Wildberger §3.2):
+The group-theoretic foundation is in Wildberger §3.2. The **size** of a box $A$, written $s(A)$, is the count of its elements (replacing each element with the empty box). Wildberger proves:
 
 $$
-T^k[A + B] = T^k[A] + T^k[B] \qquad T^k[A \times B] = T^k[A \times B]
+s(A + B) = s(A) + s(B) \qquad s(A \cdot B) = s(A) \cdot s(B)
 $$
 
-Two corollaries that matter for composition:
+This holds for any boxes, not just natural numbers. $s$ is a **ring homomorphism** — it maps the full box arithmetic ring into the natural numbers while preserving both operations. No multiplication step can produce a result whose size is inconsistent with the sizes of its inputs.
 
-1. **Composition:** $T^k[T^j[p]] = T^{\min(k,j)}[p]$ — the tighter bound wins, always.
-2. **Closed arithmetic:** degree-$\leq k$ polynomials are closed under $T^k$-truncated multiplication — the degree cannot escape.
+The practical consequence: the degree of a polynomial is $s$ applied to its leading box, and degree is therefore preserved under composition in the same ring-homomorphism sense. T^k is not a heuristic truncation — it is a **projection onto a sub-ring**:
+
+$$
+T^k[A + B] = T^k[A] + T^k[B] \qquad T^k[T^j[p]] = T^{\min(k,j)}[p]
+$$
+
+The tighter degree bound wins, always, because the homomorphism is transitive. A protocol that enforces degree $\leq k$ at its boundary cannot be made to violate that bound by any valid composition of degree-$\leq k$ inputs — the ring is closed.
 
 ---
 
