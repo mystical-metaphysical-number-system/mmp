@@ -80,6 +80,11 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
+        {
+          href: 'https://github.com/mystical-metaphysical-number-system',
+          label: 'GitHub',
+          position: 'right',
+        },
       ],
     },
     footer: {
@@ -92,6 +97,19 @@ const config: Config = {
             {label: 'Number', to: '/docs/Number'},
             {label: 'ArchaeoArithmetic', to: '/docs/ArchaeoArithmetic'},
             {label: 'Applications', to: '/docs/Applications'},
+          ],
+        },
+        {
+          title: 'Source',
+          items: [
+            {
+              label: 'boxmath (TypeScript)',
+              href: 'https://github.com/mystical-metaphysical-number-system/boxmath',
+            },
+            {
+              label: 'hardhat (Solidity)',
+              href: 'https://github.com/mystical-metaphysical-number-system/hardhat',
+            },
           ],
         },
       ],

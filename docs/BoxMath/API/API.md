@@ -6,10 +6,10 @@ sidebar_position: 3
 
 The BoxMath SDK ships two isomorphic implementations of the same primitives:
 
-| Package | Language | Arithmetic |
-|---------|----------|------------|
-| `boxmath` (`boxmath/src/`) | TypeScript | `bigint` — exact integers |
-| `BoxMath.sol` (`hardhat/contracts/`) | Solidity | `uint256` — exact integers |
+| Package | Source | Language | Arithmetic |
+|---------|--------|----------|------------|
+| `boxmath` | [mystical-metaphysical-number-system/boxmath](https://github.com/mystical-metaphysical-number-system/boxmath) | TypeScript | `bigint` — exact integers |
+| `BoxMath.sol` | [mystical-metaphysical-number-system/hardhat](https://github.com/mystical-metaphysical-number-system/hardhat) | Solidity | `uint256` — exact integers |
 
 Both use **pure integer arithmetic** — no fixed-point scaling, no `SCALE` constant. Coefficients, exponents, and evaluation results are raw natural numbers in every case. The hardhat test suite verifies the two produce identical results for every operation.
 
