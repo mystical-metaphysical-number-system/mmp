@@ -51,5 +51,5 @@ Each pair $(a, b)$ is a Pell equation candidate. The gap shrinks but never close
 This pattern carries through to the FIA (see [Box Math & Primes](../../ArchaeoArithmetic/BoxMathPrimes.md)), bonding curves, and any invariant involving a square root: square the invariant and enforce the squared relation. The integer domain is preserved throughout, and the Pell-equation structure of the near-misses is an explicit, auditable residual rather than hidden rounding error.
 
 :::note Babylonian approximation
-When you genuinely need an integer approximation of √n — e.g. for a Uniswap-style liquidity computation — the Babylonian method (used by Uniswap v2) finds $\lfloor\sqrt{n}\rfloor$ in pure integer arithmetic. That pattern is covered in the [Degree Truncation addendum](./A-Truncation.md).
+When you genuinely need an integer approximation of √n — e.g. for a Uniswap-style liquidity computation — the Babylonian method (used by Uniswap v2) finds $\lfloor\sqrt{n}\rfloor$ in pure integer arithmetic. That pattern is covered in the [§8 Degree Truncation](./8-Truncation.md).
 :::
