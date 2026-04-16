@@ -3,6 +3,6 @@
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "A ground-up derivation of the box arithmetic encoding — from the Monomial primitive through incommensurability, polynumbers, proportions, and on-chain invariants."
+    "description": "A ground-up derivation of the box arithmetic encoding — from zero and the natural numbers through polynumbers, incommensurability, multivariate algebra, and on-chain invariants."
   }
 }

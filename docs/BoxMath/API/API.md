@@ -14,5 +14,5 @@ The BoxMath SDK ships two isomorphic implementations of the same primitives:
 
 Both use **pure integer arithmetic** — no fixed-point scaling, no `SCALE` constant. Coefficients, exponents, and evaluation results are raw natural numbers in every case. The hardhat test suite verifies the two produce identical results for every operation.
 
-- [TypeScript API](./Typescript.md) — `Monomial`, `MultiPoly`, `pow`, `caretProduct`, `Pixel`, `Vexel`
+- [TypeScript API](./Typescript.md) — `Polynumber`, `Multinumber`, `pow`, `caretProduct`, `Pixel`, `Vexel`
 - [Solidity API](./Solidity.md) — `BoxMath.sol` and `PixelMath.sol` contract functions and struct types

@@ -8,10 +8,10 @@ A linear conservation law: three parties hold balances, and the total must be pr
 
 ```ts
 // e₀ = Alice, e₁ = Bob, e₂ = Treasury
-const accounts = new MultiPoly([
-  new Monomial(1n, [1, 0, 0]),
-  new Monomial(1n, [0, 1, 0]),
-  new Monomial(1n, [0, 0, 1]),
+const accounts = new Multinumber([
+  new Polynumber(1n, [1, 0, 0]),
+  new Polynumber(1n, [0, 1, 0]),
+  new Polynumber(1n, [0, 0, 1]),
 ]);
 
 const alice    = 300n;

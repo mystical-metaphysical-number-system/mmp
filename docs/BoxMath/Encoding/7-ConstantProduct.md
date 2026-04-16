@@ -13,7 +13,7 @@ $$
 A single monomial, coefficient $1$, exponents $[1, 1]$ — degree 2 in two reserve variables:
 
 ```ts
-const xy = new Monomial(1n, [1, 1]);
+const xy = new Polynumber(1n, [1, 1]);
 ```
 
 The **invariant** $k$ is locked at pool creation:

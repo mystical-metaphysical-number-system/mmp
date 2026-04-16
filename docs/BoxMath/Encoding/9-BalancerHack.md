@@ -101,13 +101,13 @@ expect(accumulated).to.equal(65n);
 
 ## Why `SafePool` is immune
 
-`SafePool` uses `BoxMath.evaluateMonomial` — two multiplications, no division, no upscaling:
+`SafePool` uses `BoxMath.evaluatePolynumber` — two multiplications, no division, no upscaling:
 
 ```solidity
 // hardhat/contracts/SafePool.sol
 function _invariant(uint256 r0, uint256 r1) internal view returns (uint256) {
     // k = r0 * r1  (exact natural number product)
-    return _math.evaluateMonomial(BoxMath.Monomial(1, exps), point);
+        return _math.evaluatePolynumber(BoxMath.Polynumber(1, exps), point);
 }
 ```
 
@@ -118,7 +118,7 @@ Token0 and token1 are held at their **native scale**. There is no bridging step.
 expect(await safe.k()).to.equal(R0 * R1);  // exact, no rounding
 
 // BoxMath at reserve0=9: 9 * R1 — not 0
-expect(await bm.evaluateMonomial(xy, [9n, R1])).to.equal(9n * R1);
+    expect(await bm.evaluatePolynumber(xy, [9n, R1])).to.equal(9n * R1);
 ```
 
 The same drain attempt is caught at two levels:

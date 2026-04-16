@@ -19,8 +19,8 @@ $$
 $$
 
 ```ts
-const ad = new Monomial(3n, []).evaluate([]) * new Monomial(8n, []).evaluate([]);
-const bc = new Monomial(4n, []).evaluate([]) * new Monomial(6n, []).evaluate([]);
+const ad = new Polynumber(3n, []).evaluate([]) * new Polynumber(8n, []).evaluate([]);
+const bc = new Polynumber(4n, []).evaluate([]) * new Polynumber(6n, []).evaluate([]);
 ad === bc;  // 24n === 24n  ✓
 ```
 
@@ -29,8 +29,8 @@ No division, no fraction — just two products that must match. This is the patt
 **A proportion in one variable** — if $y$ should be $\tfrac{3}{4}$ of $x$, express it as $4y = 3x$:
 
 ```ts
-const lhs = new MultiPoly([new Monomial(4n, [0, 1])]);  // 4y
-const rhs = new MultiPoly([new Monomial(3n, [1])]);     // 3x
+const lhs = new Multinumber([new Polynumber(4n, [0, 1])]);  // 4y
+const rhs = new Multinumber([new Polynumber(3n, [1])]);     // 3x
 
 const x = 8n;
 const y = 6n;

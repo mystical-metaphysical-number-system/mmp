@@ -1,41 +1,43 @@
-# Website
+# mmp — Mystical Metaphysical Number System
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Documentation site for the MMP project, built with [Docusaurus](https://docusaurus.io/).
 
-## Installation
+The site covers the mathematical foundation ([Wildberger's Box Arithmetic](https://web.maths.unsw.edu.au/~norman/)), its TypeScript and Solidity implementations, and a series of encoding guides showing how familiar mathematical and financial structures map onto the box arithmetic substrate.
 
-```bash
-yarn
-```
-
-## Local Development
+## Local development
 
 ```bash
-yarn start
+npm install
+npm start       # dev server with live reload at http://localhost:3000
+npm run build   # production build → build/
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+## Structure
 
-## Build
-
-```bash
-yarn build
+```
+docs/
+├── BoxMath/
+│   ├── BoxMathSDK.md          # API overview and PDF relationship table
+│   ├── API/
+│   │   ├── Typescript.md      # boxmath package reference
+│   │   └── Solidity.md        # BoxMath.sol + PixelMath.sol reference
+│   └── Encoding/
+│       ├── 1-NaturalNumbers.md     # zero, boxes, primes, why whole numbers first
+│       ├── 2-PolynumberTerm.md     # polynumber concept + API
+│       ├── 3-Incommensurability.md
+│       ├── 4-Multivariate.md
+│       ├── 5-Logic.md
+│       ├── 6-Transfer.md       # tax transfer, caller-proposes pattern
+│       ├── 7-ConstantProduct.md # AMM invariant without division
+│       ├── 8-Truncation.md     # degree bounds, field homogeneity
+│       ├── 9-BalancerHack.md   # rounding exploit case study
+│       ├── 10-LinearAlgebra.md # pixels, vexels, maxels
+│       └── 11-PixelRouter.md   # multi-hop routing via pixel algebra
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## Source repos
 
-## Deployment
-
-Using SSH:
-
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+| Repo | Description |
+|------|-------------|
+| [mystical-metaphysical-number-system/boxmath](https://github.com/mystical-metaphysical-number-system/boxmath) | TypeScript `bigint` implementation |
+| [mystical-metaphysical-number-system/hardhat](https://github.com/mystical-metaphysical-number-system/hardhat) | Solidity contracts + Hardhat 3 test suite |

@@ -7,7 +7,7 @@ sidebar_position: 2
 Import from the `boxmath` package:
 
 ```ts
-import { Monomial, MultiPoly, pow, caretProduct, Pixel, Vexel, Maxel } from 'boxmath';
+import { Polynumber, Multinumber, pow, caretProduct, Pixel, Vexel, Maxel } from 'boxmath';
 ```
 
 All values are `bigint` — plain integers, no scaling.
@@ -48,12 +48,12 @@ caretProduct([1n, 2n], [1n, 3n], [1n, 5n], [1n, 7n], [1n, 11n]);
 
 ---
 
-## `Monomial`
+## `Polynumber`
 
-A single polynomial term: a coefficient and an exponent vector.
+A single polynomial term: a natural-number coefficient and a sparse exponent vector. In Wildberger's hierarchy this is a single element of a Poly-level box — one term of a polynumber.
 
 ```ts
-new Monomial(coefficient: bigint, exponents: number[])
+new Polynumber(coefficient: bigint, exponents: number[])
 ```
 
 | Field | Meaning |
@@ -66,9 +66,9 @@ new Monomial(coefficient: bigint, exponents: number[])
 ### Construction
 
 ```ts
-const x  = new Monomial(1n, [1]);       // x
-const xy = new Monomial(1n, [1, 1]);    // xy
-const t  = new Monomial(2n, [2, 0, 1]); // 2x²z
+const x  = new Polynumber(1n, [1]);       // x
+const xy = new Polynumber(1n, [1, 1]);    // xy
+const t  = new Polynumber(2n, [2, 0, 1]); // 2x²z
 ```
 
 ### `.evaluate(point)`
@@ -78,40 +78,40 @@ $$
 $$
 
 ```ts
-new Monomial(1n, [1, 1]).evaluate([10n, 20n]);  // 200n
+new Polynumber(1n, [1, 1]).evaluate([10n, 20n]);  // 200n
 ```
 
 ### `.multiply(other)`
 
-Multiplies coefficients and adds exponent vectors — the monomial product rule.
+Multiplies coefficients and adds exponent vectors.
 
 ```ts
-const x  = new Monomial(1n, [1]);
-const y  = new Monomial(1n, [0, 1]);
-x.multiply(y);  // Monomial(1n, [1, 1])
+const x  = new Polynumber(1n, [1]);
+const y  = new Polynumber(1n, [0, 1]);
+x.multiply(y);  // Polynumber(1n, [1, 1])
 ```
 
 ### `.toString(varNames?)`
 
 ```ts
-new Monomial(2n, [2, 0, 1]).toString(['x','y','z']);  // "2x^2z"
+new Polynumber(2n, [2, 0, 1]).toString(['x','y','z']);  // "2x^2z"
 ```
 
 ---
 
-## `MultiPoly`
+## `Multinumber`
 
-A multiset of monomials — Wildberger's polynumber as a box of terms.
+A box of `Polynumber` terms — a multinumber in Wildberger's hierarchy (`Nat ⊂ Poly ⊂ Multi`). Handles both single-variable polynumbers and fully multivariate cases through the same sparse `exponents` representation.
 
 ```ts
-new MultiPoly(terms: Monomial[])
+new Multinumber(terms: Polynumber[])
 ```
 
 ### Static factories
 
 ```ts
-MultiPoly.linear([2, 3, 5]);   // 2x + 3y + 5z
-MultiPoly.constant(42n);       // 42  (degree-zero polynomial)
+Multinumber.linear([2, 3, 5]);   // 2x + 3y + 5z
+Multinumber.constant(42n);       // 42  (degree-zero)
 ```
 
 ### `.evaluate(point)`
@@ -119,7 +119,7 @@ MultiPoly.constant(42n);       // 42  (degree-zero polynomial)
 Sums each term evaluated at `point`.
 
 ```ts
-const k = new MultiPoly([new Monomial(1n, [1, 1])]);
+const k = new Multinumber([new Polynumber(1n, [1, 1])]);
 k.evaluate([100n, 200n]);  // 20000n
 ```
 
@@ -128,28 +128,28 @@ k.evaluate([100n, 200n]);  // 20000n
 Concatenates term lists — box union with multiplicity. Does **not** collapse like terms.
 
 ```ts
-const p = MultiPoly.linear([2, 0]);   // 2x
-const q = MultiPoly.linear([0, 3]);   // 3y
-p.add(q).evaluate([1n, 1n]);          // 5n
+const p = Multinumber.linear([2, 0]);   // 2x
+const q = Multinumber.linear([0, 3]);   // 3y
+p.add(q).evaluate([1n, 1n]);            // 5n
 ```
 
 ### `.multiply(other)`
 
-Pairwise monomial product across both term lists — the Cauchy / box product.
+Pairwise product across both term lists — the Cauchy / box product.
 
 $$
 A \times B = \{ a \cdot b \mid a \in A,\, b \in B \}
 $$
 
 ```ts
-const B = new MultiPoly([
-  new Monomial(1n, []),
-  new Monomial(1n, [0,0,0,1]),
-  new Monomial(1n, [0,0,1,0,1]),
+const B = new Multinumber([
+  new Polynumber(1n, []),
+  new Polynumber(1n, [0,0,0,1]),
+  new Polynumber(1n, [0,0,1,0,1]),
 ]);
-const C = new MultiPoly([
-  new Monomial(1n, [0,2]),
-  new Monomial(1n, [0,0,1,0,1]),
+const C = new Multinumber([
+  new Polynumber(1n, [0,2]),
+  new Polynumber(1n, [0,0,1,0,1]),
 ]);
 B.multiply(C).terms.length;  // 6  (3 × 2 pairs)
 ```
@@ -159,10 +159,10 @@ B.multiply(C).terms.length;  // 6  (3 × 2 pairs)
 Drops all terms with `degree > k`.
 
 ```ts
-const p = new MultiPoly([
-  new Monomial(2n, []),
-  new Monomial(3n, [1]),
-  new Monomial(1n, [2]),  // degree 2 — dropped
+const p = new Multinumber([
+  new Polynumber(2n, []),
+  new Polynumber(3n, [1]),
+  new Polynumber(1n, [2]),  // degree 2 — dropped
 ]);
 p.truncate(1).evaluate([5n]);  // 17n  (2 + 3·5)
 ```
@@ -170,7 +170,7 @@ p.truncate(1).evaluate([5n]);  // 17n  (2 + 3·5)
 ### `.toString(varNames?)`
 
 ```ts
-MultiPoly.linear([2, 3, 5]).toString(['x','y','z']);
+Multinumber.linear([2, 3, 5]).toString(['x','y','z']);
 // "2x + 3y + 5z"
 ```
 

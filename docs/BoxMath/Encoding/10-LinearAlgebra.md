@@ -4,7 +4,7 @@ sidebar_position: 10
 
 # 10. Linear Algebra Primitives: Pixels, Vexels, Maxels
 
-The polynumber layer of box arithmetic — `Monomial`, `MultiPoly`, degree truncation — gives us a powerful tool for encoding scalar invariants. But DeFi protocols do not operate on scalars alone. A portfolio is a vector of balances. A swap is a linear map between token spaces. A routing graph is a directed structure over token indices. These are linear-algebraic objects, and box arithmetic has a natural foundation for them that requires no fractions, no floating point, and no division.
+The polynumber layer of box arithmetic — `Polynumber`, `Multinumber`, degree truncation — gives us a powerful tool for encoding scalar invariants. But DeFi protocols do not operate on scalars alone. A portfolio is a vector of balances. A swap is a linear map between token spaces. A routing graph is a directed structure over token indices. These are linear-algebraic objects, and box arithmetic has a natural foundation for them that requires no fractions, no floating point, and no division.
 
 The three primitives are **Pixel**, **Vexel**, and **Maxel** — defined in §5 of Wildberger's *Box Arithmetic Overview*.
 

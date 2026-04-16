@@ -12,7 +12,7 @@ $$
 
 Each $e_n$ is just a tag — a box holding the natural number $n$. Polynomials in multiple variables are formed by taking products and sums of these tags with natural number coefficients. So where ordinary algebra writes $x$ and $y$, box arithmetic writes $e_0$ and $e_1$ (or any two distinct indices).
 
-A monomial in several variables is a product of base multinumbers:
+A polynumber term in several variables is a product of base multinumbers:
 
 $$
 e_1^2 \cdot e_3 = e_1 e_1 e_3
@@ -20,7 +20,7 @@ $$
 
 In `boxmath`, `exponents[i]` is the power of $e_i$:
 
-| Monomial | Exponent vector |
+| Polynumber | Exponent vector |
 |----------|----------------|
 | $1$ (constant) | `[]` |
 | $e_1$ | `[0, 1]` |
@@ -29,18 +29,18 @@ In `boxmath`, `exponents[i]` is the power of $e_i$:
 | $e_1^2 e_3$ | `[0, 2, 0, 1]` |
 
 :::tip Coefficients are just the natural number scalar
-`new Monomial(2n, [0,0,0,1])` is $2e_3$ — the exponent vector says *which* variables appear and at what power; the first argument is the natural number coefficient. So $1 + 2e_3 + e_2 e_4$ encodes as:
+`new Polynumber(2n, [0,0,0,1])` is $2e_3$ — the exponent vector says *which* variables appear and at what power; the first argument is the natural number coefficient. So $1 + 2e_3 + e_2 e_4$ encodes as:
 ```ts
-new MultiPoly([
-  new Monomial(1n, []),          // 1
-  new Monomial(2n, [0,0,0,1]),   // 2e₃
-  new Monomial(1n, [0,0,1,0,1]), // e₂e₄
+new Multinumber([
+  new Polynumber(1n, []),          // 1
+  new Polynumber(2n, [0,0,0,1]),   // 2e₃
+  new Polynumber(1n, [0,0,1,0,1]), // e₂e₄
 ]);
 ```
 :::
 
 :::note Trailing zeros can always be dropped
-Wildberger states explicitly: *"adding or removing final 0 entries does not change the representation."* The reason is that $e_i^0 = 1$ for any $i$ — an exponent of zero contributes nothing to the product. So `[0,0,0,1]` and `[0,0,0,1,0]` are the same monomial ($e_3$). The library respects this: `Monomial.evaluate` only multiplies when `exponents[i] > 0`, and `Monomial.extent` finds the last nonzero index and ignores everything after it.
+Wildberger states explicitly: *"adding or removing final 0 entries does not change the representation."* The reason is that $e_i^0 = 1$ for any $i$ — an exponent of zero contributes nothing to the product. So `[0,0,0,1]` and `[0,0,0,1,0]` are the same polynumber term ($e_3$). The library respects this: `Polynumber.evaluate` only multiplies when `exponents[i] > 0`, and `Polynumber.extent` finds the last nonzero index and ignores everything after it.
 :::
 
 ## Wildberger's worked example (PDF §3.5)
@@ -50,17 +50,17 @@ Wildberger states explicitly: *"adding or removing final 0 entries does not chan
 The product is every pairwise combination of a term from $B$ with a term from $C$ — $3 \times 2 = 6$ terms total:
 
 ```ts
-import { Monomial, MultiPoly } from 'boxmath';
+import { Polynumber, Multinumber } from 'boxmath';
 
-const B = new MultiPoly([
-  new Monomial(1n, []),          // 1
-  new Monomial(1n, [0,0,0,1]),   // e₃
-  new Monomial(1n, [0,0,1,0,1]), // e₂e₄
+const B = new Multinumber([
+  new Polynumber(1n, []),          // 1
+  new Polynumber(1n, [0,0,0,1]),   // e₃
+  new Polynumber(1n, [0,0,1,0,1]), // e₂e₄
 ]);
 
-const C = new MultiPoly([
-  new Monomial(1n, [0,2]),       // e₁²
-  new Monomial(1n, [0,0,1,0,1]), // e₂e₄
+const C = new Multinumber([
+  new Polynumber(1n, [0,2]),       // e₁²
+  new Polynumber(1n, [0,0,1,0,1]), // e₂e₄
 ]);
 
 const BC = B.multiply(C);

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # 2. Incommensurability — √2 and Integer Powers
@@ -11,7 +11,7 @@ Box arithmetic has no fractions, so quantities like √2 — numbers whose squar
 √2 is the positive solution to $x^2 = 2$. Checking natural numbers:
 
 ```ts
-const xSquared = new Monomial(1n, [2]);
+const xSquared = new Polynumber(1n, [2]);
 xSquared.evaluate([1n]);  // 1n — below 2
 xSquared.evaluate([2n]);  // 4n — above 2
 ```
@@ -31,8 +31,8 @@ $$
 This is a natural number equality — both sides are box arithmetic objects, and it can be checked without any approximation:
 
 ```ts
-const a2 = new Monomial(1n, [2, 0]);  // a²
-const b2 = new Monomial(2n, [0, 2]);  // 2b²
+const a2 = new Polynumber(1n, [2, 0]);  // a²
+const b2 = new Polynumber(2n, [0, 2]);  // 2b²
 
 // Is 3² = 2 × 2²?  →  9 vs 8  — close, not exact
 a2.evaluate([3n, 2n]) === b2.evaluate([3n, 2n]);  // 9n !== 8n

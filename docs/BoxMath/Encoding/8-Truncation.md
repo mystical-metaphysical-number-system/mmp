@@ -35,10 +35,10 @@ The tighter degree bound wins, always, because the homomorphism is transitive. A
 ## Truncation by example
 ```ts
 // p = 2 + 2x + x^2
-const p = new MultiPoly([
-  new Monomial(2n, []),   // 2        ≡  degree 0
-  new Monomial(3n, [1]),  // 3x       ≡  degree 1
-  new Monomial(1n, [2]),  // x²       ≡  degree 2
+const p = new Multinumber([
+  new Polynumber(2n, []),   // 2        ≡  degree 0
+  new Polynumber(3n, [1]),  // 3x       ≡  degree 1
+  new Polynumber(1n, [2]),  // x²       ≡  degree 2
 ]);
 
 p.truncate(1);  // 2 + 3x   — drops x²
@@ -60,15 +60,15 @@ $$
 For on-chain interest accrual, $x$ is a small per-second rate, and degree 4 is typically sufficient. To stay in integer arithmetic, multiply each coefficient through by the common denominator (here $4! = 24$) and carry the scale as a known constant:
 
 ```ts
-import { Monomial, MultiPoly } from 'boxmath';
+import { Polynumber, Multinumber } from 'boxmath';
 
 // 24·e^x ≈ 24 + 24x + 12x² + 4x³ + x⁴    (coefficients × 4!)
-const expSeries = new MultiPoly([
-  new Monomial(24n, [0]),  // 24        ≡  24·(1)
-  new Monomial(24n, [1]),  // 24x       ≡  24·(x/1!)
-  new Monomial(12n, [2]),  // 12x²      ≡  24·(x²/2!)
-  new Monomial( 4n, [3]),  //  4x³      ≡  24·(x³/3!)
-  new Monomial( 1n, [4]),  //   x⁴      ≡  24·(x⁴/4!)
+const expSeries = new Multinumber([
+  new Polynumber(24n, [0]),  // 24        ≡  24·(1)
+  new Polynumber(24n, [1]),  // 24x       ≡  24·(x/1!)
+  new Polynumber(12n, [2]),  // 12x²      ≡  24·(x²/2!)
+  new Polynumber( 4n, [3]),  //  4x³      ≡  24·(x³/3!)
+  new Polynumber( 1n, [4]),  //   x⁴      ≡  24·(x⁴/4!)
 ]);
 
 // rate = 1/1000 per second → x = 1, denominator = 1000
@@ -99,13 +99,13 @@ In box arithmetic, you build the full degree-4 cost polynomial and truncate to w
 ```ts
 // cost polynomial in two variables s₀, s₁ — integer coefficients, denominators cleared (×6)
 // 6·cost = 6a(s₁-s₀) + 3b(s₁²-s₀²) + 2c(s₁³-s₀³)
-const costPoly = new MultiPoly([
-  new Monomial(6n,  [0, 1]),  //  6s₁      ≡  6a·s₁         (a=1, linear term)
-  new Monomial(6n,  [1, 0]),  //  6s₀      ≡  6a·s₀         (subtracted at evaluate time)
-  new Monomial(6n,  [0, 2]),  //  6s₁²     ≡  3b·s₁²        (b=2, quadratic term)
-  new Monomial(6n,  [2, 0]),  //  6s₀²     ≡  3b·s₀²
-  new Monomial(6n,  [0, 3]),  //  6s₁³     ≡  2c·s₁³        (c=3, cubic term)
-  new Monomial(6n,  [3, 0]),  //  6s₀³     ≡  2c·s₀³
+const costPoly = new Multinumber([
+  new Polynumber(6n,  [0, 1]),  //  6s₁      ≡  6a·s₁         (a=1, linear term)
+  new Polynumber(6n,  [1, 0]),  //  6s₀      ≡  6a·s₀         (subtracted at evaluate time)
+  new Polynumber(6n,  [0, 2]),  //  6s₁²     ≡  3b·s₁²        (b=2, quadratic term)
+  new Polynumber(6n,  [2, 0]),  //  6s₀²     ≡  3b·s₀²
+  new Polynumber(6n,  [0, 3]),  //  6s₁³     ≡  2c·s₁³        (c=3, cubic term)
+  new Polynumber(6n,  [3, 0]),  //  6s₀³     ≡  2c·s₀³
 ]);
 
 // buy from supply 10 to 15

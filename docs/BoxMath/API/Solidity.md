@@ -8,7 +8,7 @@ Two contracts ship in `hardhat/contracts/`:
 
 | Contract | Primitives |
 |----------|-----------|
-| `BoxMath.sol` | `Monomial`, `MultiPoly`, polynomial evaluation, truncation, caret product |
+| `BoxMath.sol` | `Polynumber`, `Multinumber`, polynomial evaluation, truncation, caret product |
 | `PixelMath.sol` | `Pixel`, vexel operations, Pythagorean triple generation |
 
 ---
@@ -24,13 +24,13 @@ All arithmetic is **exact integer** (`uint256`) — no fixed-point scaling, no `
 ## Structs
 
 ```solidity
-struct Monomial {
+struct Polynumber {
     uint256 coefficient;
     uint256[] exponents;
 }
 
-struct MultiPoly {
-    Monomial[] terms;
+struct Multinumber {
+    Polynumber[] terms;
 }
 ```
 
@@ -69,31 +69,31 @@ const M = await boxMath.caretProduct([
 
 ---
 
-## `monomialDegree`
+## `polynumberDegree`
 
 ```solidity
-function monomialDegree(Monomial memory m) public pure returns (uint256)
+function polynumberDegree(Polynumber memory m) public pure returns (uint256)
 ```
 
 Sum of all exponents — $\sum_i e_i$.
 
 ```ts
-await boxMath.monomialDegree({ coefficient: 1n, exponents: [1n, 1n] });  // 2n
+await boxMath.polynumberDegree({ coefficient: 1n, exponents: [1n, 1n] });  // 2n
 ```
 
 ---
 
-## `evaluateMonomial`
+## `evaluatePolynumber`
 
 ```solidity
-function evaluateMonomial(Monomial memory m, uint256[] memory point)
+function evaluatePolynumber(Polynumber memory m, uint256[] memory point)
     public pure returns (uint256)
 ```
 
 Evaluates $c \cdot \prod_i p_i^{e_i}$.
 
 ```ts
-await boxMath.evaluateMonomial(
+await boxMath.evaluatePolynumber(
   { coefficient: 1n, exponents: [1n, 1n] },
   [10n, 20n]
 );  // 200n
@@ -101,11 +101,11 @@ await boxMath.evaluateMonomial(
 
 ---
 
-## `multiplyMonomials`
+## `multiplyPolynumbers`
 
 ```solidity
-function multiplyMonomials(Monomial memory a, Monomial memory b)
-    public pure returns (Monomial memory)
+function multiplyPolynumbers(Polynumber memory a, Polynumber memory b)
+    public pure returns (Polynumber memory)
 ```
 
 Multiplies coefficients and adds exponent vectors.
@@ -113,16 +113,16 @@ Multiplies coefficients and adds exponent vectors.
 ```ts
 const x = { coefficient: 1n, exponents: [1n] };
 const y = { coefficient: 1n, exponents: [0n, 1n] };
-const [coeff, exps] = await boxMath.multiplyMonomials(x, y);
+const [coeff, exps] = await boxMath.multiplyPolynumbers(x, y);
 // coeff === 1n, exps === [1n, 1n]
 ```
 
 ---
 
-## `evaluateMultiPoly`
+## `evaluateMultinumber`
 
 ```solidity
-function evaluateMultiPoly(MultiPoly memory p, uint256[] memory point)
+function evaluateMultinumber(Multinumber memory p, uint256[] memory point)
     public pure returns (uint256)
 ```
 
@@ -130,33 +130,33 @@ Sums each term evaluated at `point`.
 
 ```ts
 const k = { terms: [{ coefficient: 1n, exponents: [1n, 1n] }] };
-await boxMath.evaluateMultiPoly(k, [100n, 200n]);  // 20000n
+await boxMath.evaluateMultinumber(k, [100n, 200n]);  // 20000n
 ```
 
 ---
 
-## `addMultiPoly`
+## `addMultinumber`
 
 ```solidity
-function addMultiPoly(MultiPoly memory a, MultiPoly memory b)
-    public pure returns (MultiPoly memory)
+function addMultinumber(Multinumber memory a, Multinumber memory b)
+    public pure returns (Multinumber memory)
 ```
 
 Concatenates term lists — box union with multiplicity.
 
 ---
 
-## `multiplyMultiPoly`
+## `multiplyMultinumber`
 
 ```solidity
-function multiplyMultiPoly(MultiPoly memory a, MultiPoly memory b)
-    public pure returns (MultiPoly memory)
+function multiplyMultinumber(Multinumber memory a, Multinumber memory b)
+    public pure returns (Multinumber memory)
 ```
 
-Pairwise monomial product across both term lists — the Cauchy / box product.
+Pairwise polynumber product across both term lists — the Cauchy / box product.
 
 ```ts
-const product = await boxMath.multiplyMultiPoly(B, C);
+const product = await boxMath.multiplyMultinumber(B, C);
 product.terms.length;  // 6  (3 × 2 pairs)
 ```
 
@@ -165,15 +165,15 @@ product.terms.length;  // 6  (3 × 2 pairs)
 ## `truncate`
 
 ```solidity
-function truncate(MultiPoly memory p, uint256 k)
-    public pure returns (MultiPoly memory)
+function truncate(Multinumber memory p, uint256 k)
+    public pure returns (Multinumber memory)
 ```
 
 Drops all terms with `degree > k`.
 
 :::caution Explicit ABI decoding required
 
-ethers v6 has a known bug where decoding single-element `uint256[]` arrays inside nested struct return values throws `TypeError: Cannot assign to read only property '0'`. Any function that returns `Monomial` or `MultiPoly` must be called via `provider.call` and decoded with `AbiCoder.defaultAbiCoder()` using **unnamed** tuple type strings:
+ethers v6 has a known bug where decoding single-element `uint256[]` arrays inside nested struct return values throws `TypeError: Cannot assign to read only property '0'`. Any function that returns `Polynumber` or `Multinumber` must be called via `provider.call` and decoded with `AbiCoder.defaultAbiCoder()` using **unnamed** tuple type strings:
 
 ```ts
 const coder = ethers.AbiCoder.defaultAbiCoder();
@@ -199,7 +199,7 @@ const p = {
 };
 // use explicit decode pattern above
 // terms.length === 2
-// evaluateMultiPoly(truncated, [5n]) === 17n  (2 + 3·5)
+// evaluateMultinumber(truncated, [5n]) === 17n  (2 + 3·5)
 ```
 
 ---
