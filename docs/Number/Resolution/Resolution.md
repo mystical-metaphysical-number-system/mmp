@@ -8,5 +8,6 @@ The paradox at zero and infinity resolves into oriented voids, the ouroboros ope
 
 ## Sections
 
+- **[Negative Multisets and the Trinary Void](./NegativeMultisets.md)** — the distributive law failure that demands three zero-objects
 - **[The Infinite Nothingness](./InfiniteNothingness.md)** — frame up, frame down, the null pole
 - **[Holographic Unity](./HolographicUnity.md)** — the ouroboros operator, cross-composition, superposition, and the trinary structure
